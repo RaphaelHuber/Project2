@@ -1,6 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const router = express.Router();
+const passport = require('passport');
+const flash = require('connect-flash');
 
 const User = require('../models/User');
 const bcryptSalt = 10;
@@ -10,7 +12,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/login', (req, res, next) => {
-  res.render('login');
+  res.render('login', { message: req.flash('error') });
 });
 
 router.get('/signup', (req, res, next) => {
@@ -57,5 +59,12 @@ router.post('/signup', (req, res, next) => {
 router.get('/main', (req, res, next) => {
   res.render('main');
 });
+
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/main',
+  failureRedirect: '/login',
+  failureFlash: true,
+  passReqToCallback: true
+}));
 
 module.exports = router;
