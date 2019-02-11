@@ -76,6 +76,14 @@ router.get('/createPokemon', (req, res) => {
     });
 });
 
+router.get('/loadOneSpecies/:id', (req, res) => {
+  Species.find({ name: req.params.id })
+    .then((selected) => {
+      res.send(selected);
+    });
+});
+
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
