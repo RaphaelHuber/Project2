@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const ensureLogin = require('connect-ensure-login');
 
 const User = require('../models/User');
+const Species = require('../models/Species');
 const bcryptSalt = 10;
 
 router.get('/', (req, res, next) => {
@@ -67,6 +68,13 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true,
   passReqToCallback: true
 }));
+
+router.get('/createPokemon', (req, res) => {
+  Species.find({})
+    .then((allSpecies) => {
+      res.render('createPokemon', { allSpecies });
+    });
+});
 
 router.get('/logout', (req, res) => {
   req.logout();

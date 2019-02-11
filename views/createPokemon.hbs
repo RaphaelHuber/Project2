@@ -1,0 +1,12 @@
+<h1>Create Pokémon</h1>
+
+<form>
+  <div class="form-group">
+    <label for="Species">Example select</label>
+    <select class="form-control" id="speciesSelect" onchange="speciesSelect()">
+      {{#each allSpecies}}
+        <option>{{ this.name }}</option>
+      {{/each}}
+    </select>
+  </div>
+</form>
