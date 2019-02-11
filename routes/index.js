@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 const passport = require('passport');
 const flash = require('connect-flash');
+const ensureLogin = require('connect-ensure-login');
 
 const User = require('../models/User');
 const bcryptSalt = 10;
@@ -47,7 +48,7 @@ router.post('/signup', (req, res, next) => {
         if (err) {
           res.render('signup', { message: 'Registration ran away!' });
         } else {
-          res.redirect('/main');
+          res.redirect('/teams');
         }
       });
     })
@@ -56,15 +57,20 @@ router.post('/signup', (req, res, next) => {
     });
 });
 
-router.get('/main', (req, res, next) => {
-  res.render('main');
+router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  res.render('teams', { user: req.user });
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/main',
+  successRedirect: '/teams',
   failureRedirect: '/login',
   failureFlash: true,
   passReqToCallback: true
 }));
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/login');
+});
 
 module.exports = router;
