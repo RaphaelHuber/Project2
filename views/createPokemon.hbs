@@ -9,7 +9,7 @@
       <div> <!-- Select the pokemon -->
         <form>
           <label for="Species">Select your dream pokemon</label>
-          <select class="" id="speciesSelect" onchange="loadSpecies()">
+          <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
             <option>Pokémon</option>
             {{#each allSpecies}}
               <option>{{ this.name }}</option>
@@ -27,7 +27,7 @@
     <div> <!-- Pokemon description -->
 
       <div> <!-- Pokemon description title -->
-        <h4 class="">Pokémon Fun Facts</h4>
+        <p class="">Pokémon Fun Facts</p>
       </div>
 
       <div> <!-- Pokemon fun facts -->
@@ -49,7 +49,7 @@
       <div> <!-- Select pokemon item -->
         <form>
           <label for="Items">Item</label>
-          <select class="" id="itemSelect" onchange="">
+          <select class="form-control" id="itemSelect" onchange="">
           </select>
         </form>
       </div>
@@ -57,16 +57,16 @@
       <form> <!-- Select pokemon moves -->
         <div class="containerColumn container-margin1">
           <label>Moves</label>
-          <select class="" id="movesSelect1" onchange="">
+          <select class="form-control" id="movesSelect1" onchange="">
             <option>Move 1</option>
           </select>
-          <select class="" id="movesSelect2" onchange="">
+          <select class="form-control" id="movesSelect2" onchange="">
             <option>Move 2</option>
           </select>
-          <select class="" id="movesSelect3" onchange="">
+          <select class="form-control" id="movesSelect3" onchange="">
             <option>Move 3</option>
           </select>
-          <select class="" id="movesSelect4" onchange="">
+          <select class="form-control" id="movesSelect4" onchange="">
             <option>Move 4</option>
           </select>
         </div>
@@ -79,7 +79,7 @@
       <div> <!-- Ability -->
         <form>
           <label for="Abilities">Ability</label>
-          <select class="" id="abilitySelect" onchange="">
+          <select class="form-control" id="abilitySelect" onchange="">
             <option></option>
           </select>
         </form>
@@ -105,7 +105,7 @@
 
     <div class="containerColumn container-margin1"> <!-- Nature, base stats, IV, EV and damage --> 
      <form>
-        <div class="form-group drop-down">
+        <div class="">
           <label for="Natures">Nature</label>
           <select class="form-control" id="natureSelect" onchange="">
             <option>Lonely</option>
@@ -127,24 +127,24 @@
         <div class="containerColumn container-margin1"> <!-- IV -->
           <label class="">IV</label>
             <div class="containerColumn container-margin1">
-              <input id="inputIV1" class="" type="number" max="31" value="31">
-              <input id="inputIV2" class="" type="number" max="31" value="31">
-              <input id="inputIV3" class="" type="number" max="31" value="31">
-              <input id="inputIV4" class="" type="number" max="31" value="31">
-              <input id="inputIV5" class="" type="number" max="31" value="31">
-              <input id="inputIV6" class="" type="number" max="31" value="31">
+              <input id="inputIV1" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV2" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV3" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV4" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV5" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV6" class="form-control" type="number" max="31" value="31">
             </div>
         </div>
 
         <div class="containerColumn container-margin1"> <!-- EV -->
           <label class="">EV</label>
             <div class="containerColumn container-margin1">
-              <input id="inputEV1" class="" type="number" max="255" value="0">
-              <input id="inputEV2" class="" type="number" max="255" value="0">
-              <input id="inputEV3" class="" type="number" max="255" value="0">
-              <input id="inputEV4" class="" type="number" max="255" value="0">
-              <input id="inputEV5" class="" type="number" max="255" value="0">
-              <input id="inputEV6" class="" type="number" max="255" value="0">
+              <input id="inputEV1" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV2" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV3" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV4" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV5" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV6" class="form-control" type="number" max="255" value="0">
             </div>
         </div>
 
