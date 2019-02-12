@@ -8,9 +8,7 @@
     <div> <!-- Select and pic -->
 
       <div> <!-- Select the pokemon -->
-       
-          <label for="Species">Select your dream pokemon</label>
-          <select class="" id="speciesSelect" name="lookingfor" onchange="loadSpecies()">
+          <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
             <option>Pokémon</option>
             {{#each allSpecies}}
               <option>{{ this.name }}</option>
@@ -26,15 +24,13 @@
     </div>
 
     <div> <!-- Pokemon description -->
-
-      <div> <!-- Pokemon description title -->
-        <h4 class="">Pokémon Fun Facts</h4>
+      <div> <!-- Pokemon fun facts -->
+        <ul>
+          {{#each allSpecies}}
+            <li>{{ this.funFacts }}</li>
+          {{/each}}
+        </ul>
       </div>
-
-      <div> <!-- Pokemon description text -->
-        <p>Aenean eu quam et mi viverra bibendum non et ex. Proin in blandit libero. Nunc pellentesque nulla rhoncus fermentum luctus. Nunc placerat ullamcorper nunc at tincidunt. Duis nec ipsum feugiat, porttitor massa in, porta diam. Nunc luctus suscipit pretium. Cras pharetra non magna id interdum. Mauris tempor commodo dapibus. Sed feugiat tortor id odio vulputate, eu iaculis elit sodales. Nullam ac purus iaculis, fringilla lectus sit amet, varius ante. Suspendisse tristique faucibus orci, sed volutpat lectus commodo ut.</p>
-      </div>
-
     </div>
 
   </div>
@@ -46,7 +42,7 @@
       <div> <!-- Select pokemon item -->
         <form>
           <label for="Items">Item</label>
-          <select class="" name = "blabla" id="itemSelect" onchange="">
+          <select class="form-control" id="itemSelect" onchange="">
           </select>
         </form>
       </div>
@@ -54,16 +50,16 @@
       <form> <!-- Select pokemon moves -->
         <div class="containerColumn container-margin1">
           <label>Moves</label>
-          <select class="" id="movesSelect1" onchange="">
+          <select class="form-control" id="movesSelect1" onchange="">
             <option>Move 1</option>
           </select>
-          <select class="" id="movesSelect2" onchange="">
+          <select class="form-control" id="movesSelect2" onchange="">
             <option>Move 2</option>
           </select>
-          <select class="" id="movesSelect3" onchange="">
+          <select class="form-control" id="movesSelect3" onchange="">
             <option>Move 3</option>
           </select>
-          <select class="" id="movesSelect4" onchange="">
+          <select class="form-control" id="movesSelect4" onchange="">
             <option>Move 4</option>
           </select>
         </div>
@@ -76,7 +72,7 @@
       <div> <!-- Ability -->
         <form>
           <label for="Abilities">Ability</label>
-          <select class="" id="abilitySelect" onchange="">
+          <select class="form-control" id="abilitySelect" onchange="">
             <option></option>
           </select>
         </form>
@@ -102,7 +98,7 @@
 
     <div class="containerColumn container-margin1"> <!-- Nature, base stats, IV, EV and damage --> 
      <form>
-        <div class="form-group drop-down">
+        <div class="">
           <label for="Natures">Nature</label>
           <select class="form-control" id="natureSelect" onchange="">
             <option>Lonely</option>
@@ -118,30 +114,30 @@
           <p id="baseStatDef">Def Stat</p>
           <p id="baseStatSpAtk">SpAtk Stat</p>
           <p id="baseStatSpDef">SpDef Stat</p>
-          <p id="baseStatSpe">Spd Stat</p>
+          <p id="baseStatSpe">Spe Stat</p>
         </div>
 
         <div class="containerColumn container-margin1"> <!-- IV -->
           <label class="">IV</label>
             <div class="containerColumn container-margin1">
-              <input id="inputIV1" class="" type="number" max="31" value="31">
-              <input id="inputIV2" class="" type="number" max="31" value="31">
-              <input id="inputIV3" class="" type="number" max="31" value="31">
-              <input id="inputIV4" class="" type="number" max="31" value="31">
-              <input id="inputIV5" class="" type="number" max="31" value="31">
-              <input id="inputIV6" class="" type="number" max="31" value="31">
+              <input id="inputIV1" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV2" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV3" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV4" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV5" class="form-control" type="number" max="31" value="31">
+              <input id="inputIV6" class="form-control" type="number" max="31" value="31">
             </div>
         </div>
 
         <div class="containerColumn container-margin1"> <!-- EV -->
           <label class="">EV</label>
             <div class="containerColumn container-margin1">
-              <input id="inputEV1" class="" type="number" max="255" value="0">
-              <input id="inputEV2" class="" type="number" max="255" value="0">
-              <input id="inputEV3" class="" type="number" max="255" value="0">
-              <input id="inputEV4" class="" type="number" max="255" value="0">
-              <input id="inputEV5" class="" type="number" max="255" value="0">
-              <input id="inputEV6" class="" type="number" max="255" value="0">
+              <input id="inputEV1" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV2" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV3" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV4" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV5" class="form-control" type="number" max="255" value="0">
+              <input id="inputEV6" class="form-control" type="number" max="255" value="0">
             </div>
         </div>
 
@@ -162,7 +158,6 @@
   </div>
 
 </div>
-
 
   <button type="submit">Save</button>
 </form>
