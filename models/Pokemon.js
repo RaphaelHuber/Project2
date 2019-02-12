@@ -37,15 +37,7 @@ const pokemonSchema = new Schema({
     SpDef: Number,
     Spe: Number
   },
-  nature: String,
-  natureMods: {
-    HP: Number,
-    Atk: Number,
-    Def: Number,
-    SpAtk: Number,
-    SpDef: Number,
-    Spe: Number
-  }
+  nature: String
 });
 
 const Pokemon = mongoose.model('Pokemon', pokemonSchema);
