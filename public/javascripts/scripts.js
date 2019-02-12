@@ -6,6 +6,7 @@ function loadSpecies() {
       loadSprite(species);
       loadAbilities(species);
       loadMoves(species);
+      loadNatures();
       loadItems();
     });
 }
@@ -43,12 +44,23 @@ function loadMoves(species) {
 function loadItems() {
   axios.get('http://localhost:3000/loadAllItems')
     .then((items) => {
-      console.log(items);
       const itemPanel = document.getElementById('itemSelect');
       let itemHTML = '';
       items.data.forEach((item) => {
         itemHTML += `<option>${item.name}</option>`;
       });
       itemPanel.innerHTML = itemHTML;
+    });
+}
+
+function loadNatures() {
+  axios.get('http://localhost:3000/loadAllNatures')
+    .then((natures) => {
+      const naturesPanel = document.getElementById('natureSelect');
+      let natureHTML = '';
+      natures.data.forEach((nature) => {
+        natureHTML += `<option>${nature.name}</option>`;
+      });
+      naturesPanel.innerHTML = natureHTML;
     });
 }
