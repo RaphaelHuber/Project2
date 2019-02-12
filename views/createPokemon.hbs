@@ -1,3 +1,4 @@
+<form action="/createPokemon" method="POST">
 <div class="containerColumn"> <!-- Main -->
 
   <h1 class="bar-margin1">Create Pokémon</h1> <!-- Page title -->
@@ -7,15 +8,14 @@
     <div> <!-- Select and pic -->
 
       <div> <!-- Select the pokemon -->
-        <form>
-          <label for="Species">Select your dream pokemon</label>
-          <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
+
+          <select class="form-control" id="speciesSelect" name="lookingfor" onchange="loadSpecies()">
             <option>Pokémon</option>
             {{#each allSpecies}}
               <option>{{ this.name }}</option>
             {{/each}}
           </select>
-        </form>
+        
       </div>
 
       <div> <!-- Pokemon picture/frontsprite -->
@@ -49,7 +49,7 @@
       <div> <!-- Select pokemon item -->
         <form>
           <label for="Items">Item</label>
-          <select class="form-control" id="itemSelect" onchange="">
+          <select class="form-control" name="blabla" id="itemSelect" onchange="">
           </select>
         </form>
       </div>
@@ -165,3 +165,7 @@
   </div>
 
 </div>
+
+  <button type="submit">Save</button>
+  
+</form>
