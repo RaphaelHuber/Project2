@@ -8,26 +8,6 @@
   flex-direction: row;
 }
 
-.drop-down {
-  width: 230px;
-}
-
-.margin-main {
-  margin: 20px 0 20px 80px;
-}
-
 .container-margin1 {
-  margin: 20px 0;
-}
-
-.container-margin2 {
-  margin: 0 20px;
-}
-
-.inputSize1 {
-  width: 75px !important;
-}
-
-.noMargin {
-  margin: 0 !important;
+  margin: 20px;
 }
