@@ -5,7 +5,6 @@ let creatorBackSprite = '';
 let creatorType1 = '';
 let creatorType2 = '';
 let creatorBaseStats = {};
-// let creatorSpecies = {};
 
 function loadSpecies() {
   const selected = document.getElementById('speciesSelect').value;
@@ -48,7 +47,6 @@ function calculateStats() {
 
   axios.get(`http://localhost:3000/loadNature/${selectedNature}`)
     .then((nature) => {
-      console.log(nature);
       const natAtk = nature.data.stats.Atk;
       const natDef = nature.data.stats.Def;
       const natSpAtk = nature.data.stats.SpAtk;

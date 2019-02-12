@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const pokemonSchema = new Schema({
   dex: Number,
   name: String,
+  funFacts: [String],
   frontSprite: String,
   backSprite: String,
   type1: String,
@@ -20,7 +21,7 @@ const pokemonSchema = new Schema({
   abilities: String,
   nickname: String,
   item: String,
-  level: Number,
+  trainer: String,
   ivs: {
     HP: Number,
     Atk: Number,

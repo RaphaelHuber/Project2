@@ -1,3 +1,4 @@
+<form action="/createPokemon" method="POST">
 <div class="containerColumn"> <!-- Main -->
 
   <h1 class="bar-margin1">Create Pokémon</h1> <!-- Page title -->
@@ -7,15 +8,15 @@
     <div> <!-- Select and pic -->
 
       <div> <!-- Select the pokemon -->
-        <form>
+       
           <label for="Species">Select your dream pokemon</label>
-          <select class="" id="speciesSelect" onchange="loadSpecies()">
+          <select class="" id="speciesSelect" name="lookingfor" onchange="loadSpecies()">
             <option>Pokémon</option>
             {{#each allSpecies}}
               <option>{{ this.name }}</option>
             {{/each}}
           </select>
-        </form>
+        
       </div>
 
       <div> <!-- Pokemon picture/frontsprite -->
@@ -45,7 +46,7 @@
       <div> <!-- Select pokemon item -->
         <form>
           <label for="Items">Item</label>
-          <select class="" id="itemSelect" onchange="">
+          <select class="" name = "blabla" id="itemSelect" onchange="">
           </select>
         </form>
       </div>
@@ -163,210 +164,5 @@
 </div>
 
 
-
-
-{{!-- <div class="containerColumn"> <!-- Main -->
-
-  <h1 class="bar-margin1">Create Pokémon</h1> <!-- Page title -->
-
-  <div class="containerRow"> <!-- Create a pokemon main -->
-
-    <div class="containerColumn"> <!-- Select, pic, items, moves -->
-
-      <div> <!-- Select the pokemon -->
-        <form>
-          <label for="Species">Select your dream pokemon</label>
-          <select class="" id="speciesSelect" onchange="loadSpecies()">
-            <option>Pokémon</option>
-            {{#each allSpecies}}
-              <option>{{ this.name }}</option>
-            {{/each}}
-          </select>
-        </form>
-      </div>
-
-      <div> <!-- Pokemon picture/frontsprite -->
-        <img id="selectedSprite" src="/images/question.png" width="120" alt="photo">
-      </div>
-
-      <div> <!-- Select pokemon item -->
-        <form>
-          <label for="Items">Item</label>
-          <select class="" id="itemSelect" onchange="">
-        </form>
-      </div>
-
-      <div> <!-- Select the pokemon moves -->
-        <form>
-          <label for="Moves">Moves</label>
-          <select class="" id="movesSelect1" onchange="">
-            <option></option>
-          </select>
-          <select class="" id="movesSelect2" onchange="">
-            <option></option>
-          </select>
-          <select class="" id="movesSelect3" onchange="">
-            <option></option>
-          </select>
-          <select class="" id="movesSelect4" onchange="">
-            <option></option>
-          </select>
-        </form>
-      </div>
-    </div>
-
-    <div class="containerColumn"> <!-- Pokemon description, ability, nature, base stats -->
-      
-      <div> <!-- Pokemon description title -->
-        <h4 class="">Pokémon Fun Facts</h4>
-      </div>
-
-      <div> <!-- Pokemon description text -->
-        <p>Aenean eu quam et mi viverra bibendum non et ex. Proin in blandit libero. Nunc pellentesque nulla rhoncus fermentum luctus. Nunc placerat ullamcorper nunc at tincidunt. Duis nec ipsum feugiat, porttitor massa in, porta diam. Nunc luctus suscipit pretium. Cras pharetra non magna id interdum. Mauris tempor commodo dapibus. Sed feugiat tortor id odio vulputate, eu iaculis elit sodales. Nullam ac purus iaculis, fringilla lectus sit amet, varius ante. Suspendisse tristique faucibus orci, sed volutpat lectus commodo ut.</p>
-      </div>
-
-      <div class="containerRow"> <!-- Ability, nature, base stats -->
-        <div class="containerColumn"> <!-- Ability, type, power -->
-
-          <div> <!-- Ability -->
-            <form>
-              <label for="Abilities">Ability</label>
-              <select class="form-control" id="abilitySelect" onchange="">
-                <option></option>
-              </select>
-            </form>
-          </div>
-
-          <div class="containerRow"> <!-- Type and Power -->
-
-            <div> <!-- Type -->
-              <p>None</p>
-            </div>
-
-            <div> <!-- Power -->
-              <p>None</p>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> --}}
-
-
-{{!-- <div class='containerColumn margin-main'>
-
-  <h1 class="bar-margin1">Create Pokémon</h1>
-  
-  <form>
-    <div class="form-group drop-down container-margin1">
-      <label for="Species">Select your dream pokemon</label>
-      <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
-        <option>Pokémon</option>
-        {{#each allSpecies}}
-          <option>{{ this.name }}</option>
-        {{/each}}
-      </select>
-    </div>
-  </form>
-
-  <div class="containerRow container-margin1">
-    <div class="containerColumn container-margin2"> <!-- pic and moves -->
-      <img id="selectedSprite" src="/images/question.png" width="120" alt="photo">
-      <form>
-        <div class="form-group drop-down">
-          <label for="Items">Item</label>
-          <select class="form-control" id="itemSelect" onchange="">
-            <option></option>
-          </select>
-        </div>
-      </form>
-      <form>
-        <div class="form-group drop-down">
-          <label for="Abilities">Ability</label>
-          <select class="form-control" id="abilitySelect" onchange="">
-            <option></option>
-          </select>
-        </div>
-      </form>
-      <form>
-        <div class="form-group drop-down">
-          <label for="Natures">Nature</label>
-          <select class="form-control" id="natureSelect" onchange="">
-            <option>Lonely</option>
-          </select>
-        </div>
-      </form>
-      <form>
-        <div class="form-group drop-down">
-          <label for="Moves">Moves</label>
-          <select class="form-control" id="movesSelect1" onchange="">
-            <option></option>
-          </select>
-          <select class="form-control" id="movesSelect2" onchange="">
-            <option></option>
-          </select>
-          <select class="form-control" id="movesSelect3" onchange="">
-            <option></option>
-          </select>
-          <select class="form-control" id="movesSelect4" onchange="">
-            <option></option>
-          </select>
-        </div>
-      </form>
-    </div>
-
-    <div class="containerColumn container-margin2"> <!-- Base, IV and EV -->
-      <div class="containerRow"> <!-- Base Stats, IV and EV -->
-        <div class="form-group"> <!-- IV  -->
-          <label class="col-2 col-form-label">Base</label>
-          <div class="col-10">
-            <p id="baseStatHP" class="form-control inputSize1 noMargin">1</p>
-            <p id="baseStatAtk" class="form-control inputSize1 noMargin">2</p>
-            <p id="baseStatDef" class="form-control inputSize1 noMargin">3</p>
-            <p id="baseStatSpAtk" class="form-control inputSize1 noMargin">4</p>
-            <p id="baseStatSpDef" class="form-control inputSize1 noMargin">5</p>
-            <p id="baseStatSpe" class="form-control inputSize1 noMargin">6</p>
-          </div>
-        </div>
-        <div class="form-group"> <!-- IV  -->
-          <label class="col-2 col-form-label">IVs</label>
-          <div class="col-10">
-            <input id="inputIV1" class="form-control inputSize1" type="number" max="31" value="31">
-            <input id="inputIV2" class="form-control inputSize1" type="number" max="31" value="31">
-            <input id="inputIV3" class="form-control inputSize1" type="number" max="31" value="0">
-            <input id="inputIV4" class="form-control inputSize1" type="number" max="31" value="0">
-            <input id="inputIV5" class="form-control inputSize1" type="number" max="31" value="0">
-            <input id="inputIV6" class="form-control inputSize1" type="number" max="31" value="0">
-          </div>
-        </div>
-        <div class="form-group"> <!-- EV  -->
-          <label class="col-2 col-form-label">EVs</label>
-          <div class="col-10">
-            <input id="inputEV1" class="form-control inputSize1" type="number" max="255" value="0">
-            <input id="inputEV2" class="form-control inputSize1" type="number" max="255" value="0">
-            <input id="inputEV3" class="form-control inputSize1" type="number" max="255" value="0">
-            <input id="inputEV4" class="form-control inputSize1" type="number" max="255" value="0">
-            <input id="inputEV5" class="form-control inputSize1" type="number" max="255" value="0">
-            <input id="inputEV6" class="form-control inputSize1" type="number" max="255" value="0">
-          </div>
-        </div>
-        <div class="form-group"> <!-- IV  -->
-          <label class="col-2 col-form-label">Total</label>
-          <div class="col-10">
-            <p id="totalHP" class="form-control inputSize1 noMargin">1</p>
-            <p id="totalAtk" class="form-control inputSize1 noMargin">2</p>
-            <p id="totalDef" class="form-control inputSize1 noMargin">3</p>
-            <p id="totalSpAtk" class="form-control inputSize1 noMargin">4</p>
-            <p id="totalSpDef" class="form-control inputSize1 noMargin">5</p>
-            <p id="totalSpe" class="form-control inputSize1 noMargin">6</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div> --}}
+  <button type="submit">Save</button>
+</form>

@@ -107,6 +107,11 @@ router.get('/loadAllNatures', (req, res) => {
     });
 });
 
+router.post('/createPokemon', (req, res) => {
+  console.log('1', req.body.lookingfor);
+  console.log('1', req.body.blabla);
+});
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
