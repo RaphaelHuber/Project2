@@ -1,5 +1,230 @@
+<div class="containerColumn"> <!-- Main -->
 
-<div class='containerColumn margin-main'>
+  <h1 class="bar-margin1">Create Pokémon</h1> <!-- Page title -->
+
+  <div class="containerRow"> <!-- Create a pokemon main -->
+
+    <div class="containerRow"> <!-- select, pic and description -->
+
+      <div> <!-- Select and pic -->
+
+        <div> <!-- Select the pokemon -->
+          <form>
+            <label for="Species">Select your dream pokemon</label>
+            <select class="" id="speciesSelect" onchange="loadSpecies()">
+              <option>Pokémon</option>
+              {{#each allSpecies}}
+                <option>{{ this.name }}</option>
+              {{/each}}
+            </select>
+          </form>
+        </div>
+
+        <div> <!-- Pokemon picture/frontsprite -->
+          <img id="selectedSprite" src="/images/question.png" width="120" alt="photo">
+        </div>
+
+      </div>
+
+      <div> <!-- Pokemon description -->
+
+        <div> <!-- Pokemon description title -->
+          <h4 class="">Pokémon Fun Facts</h4>
+        </div>
+
+        <div> <!-- Pokemon description text -->
+          <p>Aenean eu quam et mi viverra bibendum non et ex. Proin in blandit libero. Nunc pellentesque nulla rhoncus fermentum luctus. Nunc placerat ullamcorper nunc at tincidunt. Duis nec ipsum feugiat, porttitor massa in, porta diam. Nunc luctus suscipit pretium. Cras pharetra non magna id interdum. Mauris tempor commodo dapibus. Sed feugiat tortor id odio vulputate, eu iaculis elit sodales. Nullam ac purus iaculis, fringilla lectus sit amet, varius ante. Suspendisse tristique faucibus orci, sed volutpat lectus commodo ut.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="containerRow"> <!-- Item, moves, ability, type, power, nature, base stats, IV, EV, Damage graph -->
+
+      <div class="containerColumn"> <!-- Item, moves -->
+
+        <div> <!-- Select pokemon item -->
+          <form>
+            <label for="Items">Item</label>
+            <select class="" id="itemSelect" onchange="">
+          </form>
+        </div>
+
+        <div> <!-- Select the pokemon moves -->
+          <form>
+            <label for="Moves">Moves</label>
+            <select class="" id="movesSelect1" onchange="">
+              <option></option>
+            </select>
+            <select class="" id="movesSelect2" onchange="">
+              <option></option>
+            </select>
+            <select class="" id="movesSelect3" onchange="">
+              <option></option>
+            </select>
+            <select class="" id="movesSelect4" onchange="">
+              <option></option>
+            </select>
+          </form>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="cotainerColumn"> <!-- Ability, type and power -->
+
+      <div> <!-- Ability -->
+        <form>
+          <label for="Abilities">Ability</label>
+          <select class="" id="abilitySelect" onchange="">
+            <option></option>
+          </select>
+        </form>
+      </div>
+
+      <div class="containerRow"> <!-- Type and power -->
+
+        <div class="conatinerColumn"> <!-- Type -->
+          <p>Type 1</p>
+          <p>Type 2</p>
+          <p>Type 3</p>
+          <p>Type 4</p>
+        </div>
+
+        <div class="conatinerColumn"> <!-- Power -->
+          <p>Power 1</p>
+          <p>Power 2</p>
+          <p>Power 3</p>
+          <p>Power 4</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="containerColumn"> <!-- Nature and Base stats -->
+
+      <div>  <!-- Nature -->
+        <p>Nature</p>
+      </div>
+
+      <div class="containerColumn">  <!-- Base Stats -->
+        <p>HP</p>
+        <p>Atk</p>
+        <p>Def</p>
+        <p>SpAtk</p>
+        <p>SpDef</p>
+        <p>Spd</p>
+      </div>
+
+    </div class="containerColum">
+      
+    <div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+{{!-- <div class="containerColumn"> <!-- Main -->
+
+  <h1 class="bar-margin1">Create Pokémon</h1> <!-- Page title -->
+
+  <div class="containerRow"> <!-- Create a pokemon main -->
+
+    <div class="containerColumn"> <!-- Select, pic, items, moves -->
+
+      <div> <!-- Select the pokemon -->
+        <form>
+          <label for="Species">Select your dream pokemon</label>
+          <select class="" id="speciesSelect" onchange="loadSpecies()">
+            <option>Pokémon</option>
+            {{#each allSpecies}}
+              <option>{{ this.name }}</option>
+            {{/each}}
+          </select>
+        </form>
+      </div>
+
+      <div> <!-- Pokemon picture/frontsprite -->
+        <img id="selectedSprite" src="/images/question.png" width="120" alt="photo">
+      </div>
+
+      <div> <!-- Select pokemon item -->
+        <form>
+          <label for="Items">Item</label>
+          <select class="" id="itemSelect" onchange="">
+        </form>
+      </div>
+
+      <div> <!-- Select the pokemon moves -->
+        <form>
+          <label for="Moves">Moves</label>
+          <select class="" id="movesSelect1" onchange="">
+            <option></option>
+          </select>
+          <select class="" id="movesSelect2" onchange="">
+            <option></option>
+          </select>
+          <select class="" id="movesSelect3" onchange="">
+            <option></option>
+          </select>
+          <select class="" id="movesSelect4" onchange="">
+            <option></option>
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <div class="containerColumn"> <!-- Pokemon description, ability, nature, base stats -->
+      
+      <div> <!-- Pokemon description title -->
+        <h4 class="">Pokémon Fun Facts</h4>
+      </div>
+
+      <div> <!-- Pokemon description text -->
+        <p>Aenean eu quam et mi viverra bibendum non et ex. Proin in blandit libero. Nunc pellentesque nulla rhoncus fermentum luctus. Nunc placerat ullamcorper nunc at tincidunt. Duis nec ipsum feugiat, porttitor massa in, porta diam. Nunc luctus suscipit pretium. Cras pharetra non magna id interdum. Mauris tempor commodo dapibus. Sed feugiat tortor id odio vulputate, eu iaculis elit sodales. Nullam ac purus iaculis, fringilla lectus sit amet, varius ante. Suspendisse tristique faucibus orci, sed volutpat lectus commodo ut.</p>
+      </div>
+
+      <div class="containerRow"> <!-- Ability, nature, base stats -->
+        <div class="containerColumn"> <!-- Ability, type, power -->
+
+          <div> <!-- Ability -->
+            <form>
+              <label for="Abilities">Ability</label>
+              <select class="form-control" id="abilitySelect" onchange="">
+                <option></option>
+              </select>
+            </form>
+          </div>
+
+          <div class="containerRow"> <!-- Type and Power -->
+
+            <div> <!-- Type -->
+              <p>None</p>
+            </div>
+
+            <div> <!-- Power -->
+              <p>None</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> --}}
+
+
+{{!-- <div class='containerColumn margin-main'>
 
   <h1 class="bar-margin1">Create Pokémon</h1>
   
@@ -62,14 +287,9 @@
     </div>
 
     <div class="containerColumn container-margin2"> <!-- Base, IV and EV -->
-      <div> <!-- Base-->
-        <p>Base Diagram</p>
-        <p>############</p>
-        <p>############</p>
-      </div> 
       <div class="containerRow"> <!-- Base Stats, IV and EV -->
         <div class="form-group"> <!-- IV  -->
-          <label class="col-2 col-form-label">IV</label>
+          <label class="col-2 col-form-label">Base Stats</label>
           <div class="col-10">
             <p id="baseStatHP" class="form-control inputSize1 noMargin">1</p>
             <p id="baseStatAtk" class="form-control inputSize1 noMargin">2</p>
@@ -82,8 +302,8 @@
         <div class="form-group"> <!-- IV  -->
           <label class="col-2 col-form-label">IV</label>
           <div class="col-10">
-            <input id="inputIV1" class="form-control inputSize1" type="number" max="31" value="0">
-            <input id="inputIV2" class="form-control inputSize1" type="number" max="31" value="0">
+            <input id="inputIV1" class="form-control inputSize1" type="number" max="31" value="31">
+            <input id="inputIV2" class="form-control inputSize1" type="number" max="31" value="31">
             <input id="inputIV3" class="form-control inputSize1" type="number" max="31" value="0">
             <input id="inputIV4" class="form-control inputSize1" type="number" max="31" value="0">
             <input id="inputIV5" class="form-control inputSize1" type="number" max="31" value="0">
@@ -101,8 +321,17 @@
             <input id="inputEV6" class="form-control inputSize1" type="number" max="255" value="0">
           </div>
         </div>
+      <div> <!-- Base-->
+        <p>Base Diagram</p>
+        <p>############</p>
+        <p>############</p>
+        <p>############</p>
+        <p>############</p>
+        <p>############</p>
+        <p>############</p>
+      </div> 
       </div>
     </div>
   </div>
   
-</div>
+</div> --}}
