@@ -1,16 +1,42 @@
-<h1>Create Pokémon</h1>
 
-<form>
-  <div class="form-group">
-    <label for="Species">Example select</label>
-    <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
-      {{#each allSpecies}}
-        <option>{{ this.name }}</option>
-      {{/each}}
-    </select>
+<div class='containerColumn margin-main'>
+
+  <h1 class="bar-margin1">Create Pokémon</h1>
+  
+  <form>
+    <div class="form-group drop-down container-margin1">
+      <label for="Species">Select your dream pokemon</label>
+      <select class="form-control" id="speciesSelect" onchange="speciesSelect()">
+        {{#each allSpecies}}
+          <option>{{ this.name }}</option>
+        {{/each}}
+      </select>
+    </div>
+  </form>
+
+  <div class="containerRow container-margin1">
+    <div class="containerColumn container-margin2"> <!-- pic and moves -->
+      <img src="images/front26.png" width="120" alt="photo Raichu">
+      <p>Items</p>
+      <p>Ability</p>
+      <p>Moves</p>
+    </div>
+
+    <div class="containerColumn container-margin2"> <!-- Base, IV and EV -->
+      <div> <!-- Base-->
+        <p>Base Diagram</p>
+        <p>############</p>
+        <p>############</p>
+      </div> 
+      <div class="containerRow"> <!-- IV and EV -->
+        <div class="container-margin2">
+           <p>IV</p>
+        </div>
+        <div class="container-margin2">
+           <p>EV</p>
+        </div>
+      </div>
+    </div>
   </div>
-</form>
-
-<div id="createPanel">
-
+  
 </div>
