@@ -7,6 +7,8 @@ const ensureLogin = require('connect-ensure-login');
 
 const User = require('../models/User');
 const Species = require('../models/Species');
+const Item = require('../models/Item');
+
 const bcryptSalt = 10;
 
 router.get('/', (req, res, next) => {
@@ -83,6 +85,12 @@ router.get('/loadOneSpecies/:id', (req, res) => {
     });
 });
 
+router.get('/loadAllItems', (req, res) => {
+  Item.find({})
+    .then((selected) => {
+      res.send(selected);
+    });
+});
 
 router.get('/logout', (req, res) => {
   req.logout();

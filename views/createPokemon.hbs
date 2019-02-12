@@ -6,7 +6,8 @@
   <form>
     <div class="form-group drop-down container-margin1">
       <label for="Species">Select your dream pokemon</label>
-      <select class="form-control" id="speciesSelect" onchange="speciesSelect()">
+      <select class="form-control" id="speciesSelect" onchange="loadSpecies()">
+        <option>Pokémon</option>
         {{#each allSpecies}}
           <option>{{ this.name }}</option>
         {{/each}}
@@ -16,10 +17,40 @@
 
   <div class="containerRow container-margin1">
     <div class="containerColumn container-margin2"> <!-- pic and moves -->
-      <img src="images/front26.png" width="120" alt="photo Raichu">
-      <p>Items</p>
-      <p>Ability</p>
-      <p>Moves</p>
+      <img id="selectedSprite" src="/images/question.png" width="120" alt="photo">
+      <form>
+        <div class="form-group drop-down">
+          <label for="Items">Item</label>
+          <select class="form-control" id="itemSelect" onchange="">
+            <option></option>
+          </select>
+        </div>
+      </form>
+      <form>
+        <div class="form-group drop-down">
+          <label for="Abilities">Ability</label>
+          <select class="form-control" id="abilitySelect" onchange="">
+            <option></option>
+          </select>
+        </div>
+      </form>
+      <form>
+        <div class="form-group drop-down">
+          <label for="Moves">Moves</label>
+          <select class="form-control" id="movesSelect1" onchange="">
+            <option></option>
+          </select>
+          <select class="form-control" id="movesSelect2" onchange="">
+            <option></option>
+          </select>
+          <select class="form-control" id="movesSelect3" onchange="">
+            <option></option>
+          </select>
+          <select class="form-control" id="movesSelect4" onchange="">
+            <option></option>
+          </select>
+        </div>
+      </form>
     </div>
 
     <div class="containerColumn container-margin2"> <!-- Base, IV and EV -->

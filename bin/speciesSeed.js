@@ -36,7 +36,7 @@ const species = [
       SpDef: 80,
       Spd: 100
     },
-    moves: ['Counter', 'Dynamic Punch', 'Focus Blast', 'Headbutt', 'Hyper Beam', 'Mega Punch'],
+    moves: ['Dynamic Punch', 'Focus Blast', 'Headbutt', 'Hyper Beam', 'Mega Punch'],
     abilities: ['Static']
   }
 ];
