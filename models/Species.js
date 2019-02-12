@@ -14,7 +14,7 @@ const speciesSchema = new Schema({
     Def: Number,
     SpAtk: Number,
     SpDef: Number,
-    Spd: Number
+    Spe: Number
   },
   moves: [String],
   abilities: [String]

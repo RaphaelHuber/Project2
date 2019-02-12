@@ -1,18 +1,90 @@
+let creatorDex = 0;
+let creatorName = '';
+let creatorFrontSprite = '';
+let creatorBackSprite = '';
+let creatorType1 = '';
+let creatorType2 = '';
+let creatorBaseStats = {};
+// let creatorSpecies = {};
+
 function loadSpecies() {
   const selected = document.getElementById('speciesSelect').value;
   axios.get(`http://localhost:3000/loadOneSpecies/${selected}`)
     .then((species) => {
-      // console.log(species.data);
+      feedSpecies(species);
       loadSprite(species);
+      loadBaseStats(species);
       loadAbilities(species);
       loadMoves(species);
       loadNatures();
       loadItems();
+      calculateStats();
     });
+}
+
+function calculateStats() {
+  const baseHP = parseInt(document.getElementById('baseStatHP').innerText, 10);
+  const baseAtk = parseInt(document.getElementById('baseStatAtk').innerText, 10);
+  const baseDef = parseInt(document.getElementById('baseStatDef').innerText, 10);
+  const baseSpAtk = parseInt(document.getElementById('baseStatSpAtk').innerText, 10);
+  const baseSpDef = parseInt(document.getElementById('baseStatSpDef').innerText, 10);
+  const baseSpe = parseInt(document.getElementById('baseStatSpe').innerText, 10);
+
+  const HPIV = parseInt(document.getElementById('inputIV1').value, 10);
+  const AtkIV = parseInt(document.getElementById('inputIV2').value, 10);
+  const DefIV = parseInt(document.getElementById('inputIV3').value, 10);
+  const SpAtkIV = parseInt(document.getElementById('inputIV4').value, 10);
+  const SpDefIV = parseInt(document.getElementById('inputIV5').value, 10);
+  const SpeIV = parseInt(document.getElementById('inputIV6').value, 10);
+
+  const HPEV = parseInt(document.getElementById('inputEV1').value, 10);
+  const AtkEV = parseInt(document.getElementById('inputEV2').value, 10);
+  const DefEV = parseInt(document.getElementById('inputEV3').value, 10);
+  const SpAtkEV = parseInt(document.getElementById('inputEV4').value, 10);
+  const SpDefEV = parseInt(document.getElementById('inputEV5').value, 10);
+  const SpeEV = parseInt(document.getElementById('inputEV6').value, 10);
+
+  const selectedNature = document.getElementById('natureSelect').value;
+
+  axios.get(`http://localhost:3000/loadNature/${selectedNature}`)
+    .then((nature) => {
+      console.log(nature);
+      const natAtk = nature.data.stats.Atk;
+      const natDef = nature.data.stats.Def;
+      const natSpAtk = nature.data.stats.SpAtk;
+      const natSpDef = nature.data.stats.SpDef;
+      const natSpe = nature.data.stats.Spe;
+
+      document.getElementById('totalHP').innerText = HPCalc(baseHP, HPIV, HPEV);
+      document.getElementById('totalAtk').innerText = statCalc(baseAtk, AtkIV, AtkEV, natAtk);
+      document.getElementById('totalDef').innerText = statCalc(baseDef, DefIV, DefEV, natDef);
+      document.getElementById('totalSpAtk').innerText = statCalc(baseSpAtk, SpAtkIV, SpAtkEV, natSpAtk);
+      document.getElementById('totalSpDef').innerText = statCalc(baseSpDef, SpDefIV, SpDefEV, natSpDef);
+      document.getElementById('totalSpe').innerText = statCalc(baseSpe, SpeIV, SpeEV, natSpe);
+    });
+}
+
+function feedSpecies(species) {
+  creatorDex = species.data[0].dex;
+  creatorName = species.data[0].name;
+  creatorFrontSprite = species.data[0].frontSprite;
+  creatorBackSprite = species.data[0].backSprite;
+  creatorType1 = species.data[0].type1;
+  creatorType2 = species.data[0].type2;
+  creatorBaseStats = species.data[0].baseStats;
 }
 
 function loadSprite(species) {
   document.getElementById('selectedSprite').src = (`${species.data[0].frontSprite}`);
+}
+
+function loadBaseStats(species) {
+  document.getElementById('baseStatHP').innerText = species.data[0].baseStats.HP;
+  document.getElementById('baseStatAtk').innerText = species.data[0].baseStats.Atk;
+  document.getElementById('baseStatDef').innerText = species.data[0].baseStats.Def;
+  document.getElementById('baseStatSpAtk').innerText = species.data[0].baseStats.SpAtk;
+  document.getElementById('baseStatSpDef').innerText = species.data[0].baseStats.SpDef;
+  document.getElementById('baseStatSpe').innerText = species.data[0].baseStats.Spe;
 }
 
 function loadAbilities(species) {
@@ -63,4 +135,12 @@ function loadNatures() {
       });
       naturesPanel.innerHTML = natureHTML;
     });
+}
+
+function statCalc(base, IV, EV, nature) {
+  return Math.floor(((((2 * base + IV + (EV / 4))) + 5) * nature));
+}
+
+function HPCalc(base, IV, EV) {
+  return Math.floor((2 * base + IV + (EV / 4)) + 100 + 10);
 }

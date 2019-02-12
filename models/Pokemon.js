@@ -14,7 +14,7 @@ const pokemonSchema = new Schema({
     Def: Number,
     SpAtk: Number,
     SpDef: Number,
-    Spd: Number
+    Spe: Number
   },
   moves: [String],
   abilities: String,
@@ -27,7 +27,7 @@ const pokemonSchema = new Schema({
     Def: Number,
     SpAtk: Number,
     SpDef: Number,
-    Spd: Number
+    Spe: Number
   },
   evs: {
     HP: Number,
@@ -35,7 +35,7 @@ const pokemonSchema = new Schema({
     Def: Number,
     SpAtk: Number,
     SpDef: Number,
-    Spd: Number
+    Spe: Number
   },
   nature: String,
   natureMods: {
@@ -44,7 +44,7 @@ const pokemonSchema = new Schema({
     Def: Number,
     SpAtk: Number,
     SpDef: Number,
-    Spd: Number
+    Spe: Number
   }
 });
 

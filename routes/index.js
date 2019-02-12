@@ -86,6 +86,13 @@ router.get('/loadOneSpecies/:id', (req, res) => {
     });
 });
 
+router.get('/loadNature/:id', (req, res) => {
+  Nature.findOne({ name: req.params.id })
+    .then((selected) => {
+      res.send(selected);
+    });
+});
+
 router.get('/loadAllItems', (req, res) => {
   Item.find({})
     .then((selected) => {

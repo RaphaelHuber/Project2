@@ -17,7 +17,7 @@ const species = [
       Def: 100,
       SpAtk: 85,
       SpDef: 105,
-      Spd: 78
+      Spe: 78
     },
     moves: ['Aqua Jet', 'Aqua Ring', 'Blizzard', 'Body Slam', 'Hydro Pump', 'Rain Dance'],
     abilities: ['Torrent']
@@ -34,7 +34,7 @@ const species = [
       Def: 55,
       SpAtk: 90,
       SpDef: 80,
-      Spd: 100
+      Spe: 100
     },
     moves: ['Dynamic Punch', 'Focus Blast', 'Headbutt', 'Hyper Beam', 'Mega Punch'],
     abilities: ['Static']
