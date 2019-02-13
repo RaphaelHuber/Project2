@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const speciesSchema = new Schema({
   dex: Number,
   name: String,
+  funFacts: { type: [String], default: [''] },
   frontSprite: String,
   backSprite: String,
   type1: String,

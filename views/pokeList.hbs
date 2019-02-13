@@ -1,0 +1,30 @@
+<div class="containerRow fullScreen">
+
+  <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
+
+    <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
+    
+      <div class="sidebarMargin1"> Hello {{user.username}} </div>
+      <div class="list-group list-group-flush">
+        <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Your Teams</a>
+        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
+      </div>
+      <div class="sidebarLogout">
+         <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="containerRow flex-wrap">
+    {{#each allPokemon}}
+      {{> pokeCard this }}
+    {{/each}}
+  </div>
+
+</div>
+    
+
+

@@ -9,6 +9,7 @@ const User = require('../models/User');
 const Species = require('../models/Species');
 const Item = require('../models/Item');
 const Nature = require('../models/Nature');
+const Pokemon = require('../models/Pokemon');
 
 const bcryptSalt = 10;
 
@@ -65,6 +66,14 @@ router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render('teams', { user: req.user });
 });
 
+router.get('/pokeList', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  Pokemon.find({ trainer: req.user.username })
+    .then((allPokemon) => {
+      res.render('pokeList', { allPokemon });
+    });
+});
+
+
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/teams',
   failureRedirect: '/login',
@@ -72,7 +81,7 @@ router.post('/login', passport.authenticate('local', {
   passReqToCallback: true
 }));
 
-router.get('/createPokemon', (req, res) => {
+router.get('/createPokemon', ensureLogin.ensureLoggedIn(), (req, res) => {
   Species.find({})
     .then((allSpecies) => {
       res.render('createPokemon', { allSpecies });
@@ -109,6 +118,71 @@ router.get('/loadAllNatures', (req, res) => {
 
 router.get('/teamDetail', (req, res, next) => {
   res.render('teamDetail');
+});
+
+router.post('/createPokemon', (req, res) => {
+  const trainer = req.user.username;
+  const item = req.body.createItem;
+  const nature = req.body.createNature;
+  const ability = req.body.createAbility;
+  const moves = [req.body.createMove1, req.body.createMove2, req.body.createMove3, req.body.createMove4];
+  const IV1 = req.body.createIV1;
+  const IV2 = req.body.createIV2;
+  const IV3 = req.body.createIV3;
+  const IV4 = req.body.createIV4;
+  const IV5 = req.body.createIV5;
+  const IV6 = req.body.createIV6;
+  const EV1 = req.body.createEV1;
+  const EV2 = req.body.createEV2;
+  const EV3 = req.body.createEV3;
+  const EV4 = req.body.createEV4;
+  const EV5 = req.body.createEV5;
+  const EV6 = req.body.createEV6;
+
+  Species.findOne({ name: req.body.speciesName })
+    .then((species) => {
+      const { dex, name, funFacts, frontSprite, backSprite, type1, type2, baseStats } = species;
+
+      const newPoke = new Pokemon({
+        dex,
+        name,
+        funFacts,
+        frontSprite,
+        backSprite,
+        type1,
+        type2,
+        baseStats,
+        trainer,
+        moves,
+        ability,
+        item,
+        nature,
+        ivs: {
+          HP: IV1,
+          Atk: IV2,
+          Def: IV3,
+          SpAtk: IV4,
+          SpDef: IV5,
+          Spe: IV6
+        },
+        evs: {
+          HP: EV1,
+          Atk: EV2,
+          Def: EV3,
+          SpAtk: EV4,
+          SpDef: EV5,
+          Spe: EV6
+        }
+      });
+
+      newPoke.save((err) => {
+        if (err) {
+          res.render('createPokemon', { message: 'Error' });
+        } else {
+          res.redirect('/createPokemon');
+        }
+      });
+    });
 });
 
 router.get('/logout', (req, res) => {

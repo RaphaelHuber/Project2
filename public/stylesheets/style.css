@@ -1,27 +1,35 @@
+p {
+  margin-bottom: 0;
+}
+
 .fullScreen {
   min-height: 100vh;
   min-width: 100vw;
 }
 
+.centerContent {
+  align-items: center;
+}
+
 .containerColumn {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
-
 .containerRow {
   display: flex;
   flex-direction: row;
+}
+
+.flex-wrap {
   flex-wrap: wrap;
 }
 
 .container-margin1 {
   margin: 0.4vh 1.4vw;
 }
-
 .sidebarMargin1 {
  text-align: center;
- margin: 2vh 2vw;
+ margin: 2vh 5vw;
 }
 
 .btnSize1 {
@@ -34,11 +42,9 @@
   bottom: 0;
   margin: 0 2vw;
 }
-
 .noBorder {
   border: none;
 }
-
 .dropDown {
   width: 10vw;
 }
@@ -51,15 +57,12 @@
 .teamContainerMargin1 {
   margin: 3vh 0;
 }
-
 .center {
   margin: 0 auto;
 }
-
 .dropDownMargin1 {
   margin: 0.2vh 0;
 }
-
 .titleMargin1 {
   margin: 3vh 2vw;
 }
@@ -71,12 +74,9 @@
 .pokemonDisplay1 {
   width: 130px;
   height: 130px;
-  /* background-color: #ced4da; */
   border-radius: 0.3rem;
   margin: 2vh 2vw;
 }
-
-
 
 /* hover pokemon  */
 .hiddenBtn {
@@ -123,4 +123,18 @@
 .text {
   color: black;
   font-size: 16px;
+}
+
+/* Poke cards */
+.pokeListImg {
+  width: 10vw;
+  margin: 0 auto;
+}
+
+.cardDesign1 {
+  height: 56vh;
+  width: 18vw;
+  min-width: 220px;
+  background-color: #F3D91F;
+  margin: 4vh 0 0 2vw;
 }
