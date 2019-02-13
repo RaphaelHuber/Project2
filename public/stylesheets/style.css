@@ -1,13 +1,48 @@
 .containerColumn {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .containerRow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .container-margin1 {
-  margin: 10px 20px;
+  margin: 6px 28px;
+}
+
+.sidebarMargin1 {
+  margin: 18px 22px;
+}
+
+.sidebarLogout {
+  margin: 450px 0 0 0;
+}
+
+button {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.noBorder {
+  border: none;
+}
+
+.dropDown {
+  width: 140px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.dropDownMargin1 {
+  margin: 2px 0;
+}
+
+.titleMargin1 {
+  margin: 25px;
 }
