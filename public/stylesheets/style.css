@@ -19,9 +19,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .containerRow {
   display: flex;
   flex-direction: row;
+}
+
+.noTopPadding {
+  padding-top: 0 !important;
 }
 
 .flex-wrap {
@@ -31,6 +36,7 @@ body {
 .container-margin1 {
   margin: 0.4vh 1.4vw;
 }
+
 .sidebarMargin1 {
  text-align: center;
  margin: 2vh 5vw;
@@ -38,7 +44,6 @@ body {
 
 .btnSize1 {
   width: 8vw;
-  margin: 0 auto;
 } 
 
 .sidebarLogout {
@@ -92,9 +97,8 @@ body {
 
 .container {
   position: relative;
-  width: 130px;
-  border-radius: 0.3rem;
-  margin: 2vh 2vw;
+  width: 150px;
+  margin: 5px auto;
 }
 
 .image {
@@ -130,11 +134,6 @@ body {
 }
 
 /* Poke cards */
-.pokeListImg {
-  width: 130px;
-  margin: 0 auto;
-}
-
 .cardDesign1 {
   width: 18vw;
   min-width: 220px;
