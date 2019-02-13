@@ -31,61 +31,71 @@
 
     </div>
 
-    <div class="containerRow"> <!-- Item, moves, ability, type, power, nature, base stats, IV, EV, Damage graph -->
+    <div class="containerRow"> <!-- Item, moves, ability, type, category, pokemon save button, nature, base stats, IV, EV, Damage graph -->
 
-      <div class="containerColumn container-margin1"> <!-- Item, moves -->
+      <div class="containerColumn"> <!-- Item, moves, ability, type, category and pokemon save button-->
 
-        <div> <!-- Select pokemon item -->
-            <label for="Items">Item</label>
-            <select class="form-control dropDown" id="itemSelect" name="createItem">
-            </select>
+        <div class="containerRow">  <!-- Item, moves, ability, type and category -->
+
+          <div class="containerColumn container-margin1"> <!-- Item, moves -->
+
+            <div> <!-- Select pokemon item -->
+                <label for="Items">Item</label>
+                <select class="form-control dropDown" id="itemSelect" name="createItem">
+                </select>
+            </div>
+
+              <div class="containerColumn">
+                <label>Moves</label>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
+                  <option>Move 1</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
+                  <option>Move 2</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
+                  <option>Move 3</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
+                  <option>Move 4</option>
+                </select>
+              </div>
+            
+          </div>
+
+          <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
+
+            <form class="center"> <!-- Ability -->
+              <label for="Abilities">Ability</label>
+              <select class="form-control dropDown" id="abilitySelect" name="createAbility">
+                <option></option>
+              </select>
+            </form>
+
+            <div class="containerRow container-margin1"> <!-- Type and category -->
+
+              <div class="containerColumn container-margin1"> <!-- Type -->
+                <img class="typesMargin1 topMargin1" id="type1Img" src="/images/types/electric.png">
+                <img class="typesMargin1"  id="type2Img" src="/images/types/fire.png">
+                <img class="typesMargin1"  id="type3Img" src="/images/types/ice.png">
+                <img class="typesMargin1"  id="type4Img" src="/images/types/steel.png">
+              </div>
+
+              <div class="containerColumn container-margin1"> <!-- Category -->
+                <img class="categoryMargin1 topMargin1" id="category1Img" src="/images/categories/physical.png">
+                <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
+                <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
+                <img class="categoryMargin1" id="category1Img" src="/images/categories/status.png">
+              </div>
+
+            </div>
+            
+          </div>
+
         </div>
 
-          <div class="containerColumn">
-            <label>Moves</label>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
-              <option>Move 1</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
-              <option>Move 2</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
-              <option>Move 3</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
-              <option>Move 4</option>
-            </select>
-          </div>
-        
-      </div>
+        <button type="submit" class="btn btn-light btnSize1">Save</button> <!-- pokemon save button -->
 
-      <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
-
-        <form class="center"> <!-- Ability -->
-          <label for="Abilities">Ability</label>
-          <select class="form-control dropDown" id="abilitySelect" name="createAbility">
-            <option></option>
-          </select>
-        </form>
-
-        <div class="containerRow container-margin1"> <!-- Type and category -->
-
-          <div class="containerColumn container-margin1"> <!-- Type -->
-            <img class="typesMargin1 topMargin1" id="type1Img" src="/images/types/electric.png">
-            <img class="typesMargin1"  id="type2Img" src="/images/types/fire.png">
-            <img class="typesMargin1"  id="type3Img" src="/images/types/ice.png">
-            <img class="typesMargin1"  id="type4Img" src="/images/types/steel.png">
-          </div>
-
-          <div class="containerColumn container-margin1"> <!-- Category -->
-            <img class="categoryMargin1 topMargin1" id="category1Img" src="/images/categories/physical.png">
-            <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
-            <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
-            <img class="categoryMargin1" id="category1Img" src="/images/categories/status.png">
-          </div>
-
-        </div>
-        
       </div>
 
       <div class="containerColumn container-margin1 center"> <!-- Nature, base stats, IV, EV and damage --> 
@@ -165,7 +175,5 @@
     </div>
 
   </div>
-
-  <button type="submit" class="btn btn-outline-info btnSize1">Save</button>
   
 </form>
