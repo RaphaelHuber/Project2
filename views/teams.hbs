@@ -1,10 +1,67 @@
-<nav class="nav flex-column">
-  <a>Pokemaster {{user.username}}</a>
-  <a href="/logout">logout</a>
-  <br>
-  <a class="nav-link active" href="#">Teams</a>
-  <a class="nav-link" href="#">Pokémon</a>
-  <a class="nav-link" href="#">Analysis</a>
-  <a class="nav-link" href="#">Types</a>
-  <a class="nav-link" href="#">Natures</a>
-</nav>
+<div class="containerRow fullScreen">
+
+  <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
+
+    <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
+    
+      <div class="sidebarMargin1"> Trainer {{user.username}} </div>
+      <div class="list-group list-group-flush">
+        <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Teams</a>
+        <a href="/pokeList" class="list-group-item list-group-item-action bg-light noBorder">Pokemon</a>
+        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
+      </div>
+      <div class="sidebarLogout">
+         <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="containerColumn center"> <!-- teams -->
+
+    <div class="containerColumn teamMargin1"> <!-- first team -->
+
+      <h3 class="center titleMargin2">Team 1</h3> <!-- first team title -->
+
+      <div class="containerRow containerBorder"> <!-- first team pokemons -->
+
+        <div class="container"> 
+          <img src="/images/front9.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+        <div class="container">
+          <img src="/images/front26.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+        <div class="container"> 
+          <img src="/images/front9.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+        <div class="container"> 
+          <img src="/images/front26.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+        <div class="container"> 
+          <img src="/images/front9.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+        <div class="container">
+          <img src="/images/front26.png" class="image">
+          <button class="text hiddenBtn middle" onclick="">Details</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,23 +1,26 @@
-<div class="containerRow">
+<div class="containerRow fullScreen">
+  
   <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
 
     <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
-      <div class="sidebarMargin1"> Pokemaster {{user.username}} </div>
+
+      <div class="sidebarMargin1"> Trainer </div>
       <div class="list-group list-group-flush">
-        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">Your Teams</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
+        <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Teams</a>
+        <a href="/pokeList" class="list-group-item list-group-item-action bg-light noBorder">Pokemon</a>
+        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
         <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
       </div>
       <div class="sidebarLogout">
          <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
       </div>
+
     </div>
+
   </div>
 
   <form action="/createPokemon" method="POST" onchange="calculateStats()">
     <div class="containerColumn"> <!-- Main -->
-
-      <h1 class="titleMargin1">Create Pokémon</h1> <!-- Page title -->
 
       <div class="containerRow container-margin1"> <!-- select, pic and description -->
 
@@ -43,9 +46,6 @@
         <div> <!-- Pokemon description -->
           <div> <!-- Pokemon fun facts -->
             <ul>
-              {{#each allSpecies}}
-                <li>{{ this.funFacts }}</li>
-              {{/each}}
             </ul>
           </div>
         </div>
@@ -117,14 +117,32 @@
 
           <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
 
-            <div class="containerColumn container-margin1">  <!-- Base Stats -->
-              <label>Base Stats</label>
-                <p id="baseStatHP">HP Stat</p>
-                <p id="baseStatAtk">Atk Stat</p>
-                <p id="baseStatDef">Def Stat</p>
-                <p id="baseStatSpAtk">SpAtk Stat</p>
-                <p id="baseStatSpDef">SpDef Stat</p>
-                <p id="baseStatSpe">Spe Stat</p>
+            <div class="containerColumn"> <!-- Base Stats -->
+
+              <label>Base Stats</label> <!-- Base Stats title -->
+
+              <div class="containerRow">
+
+                <div class="containerColumn container-margin1">  <!-- Base Stats names -->
+                    <p>HP</p>
+                    <p>Atk</p>
+                    <p>Def</p>
+                    <p>SpAtk</p>
+                    <p>SpDef</p>
+                    <p>Spe</p>
+                </div>
+
+                <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
+                    <p id="baseStatHP">0</p>
+                    <p id="baseStatAtk">0</p>
+                    <p id="baseStatDef">0</p>
+                    <p id="baseStatSpAtk">0</p>
+                    <p id="baseStatSpDef">0</p>
+                    <p id="baseStatSpe">0</p>
+                </div>
+              
+              </div>
+
             </div>
 
             <div class="containerColumn container-margin1"> <!-- IV -->
@@ -151,7 +169,7 @@
                 </div>
             </div>
 
-            <div class="containerColum container-margin1"> <!-- Damage Graph -->
+            <div class="containerColumn container-margin1"> <!-- Damage Graph -->
               <p>Total</p>
               <div>
                 <p id="totalHP" class="">0</p>
@@ -169,7 +187,7 @@
 
     </div>
 
-    <button type="submit" class="bg-light">Save</button>
+    <button type="submit" class="btn btn-outline-info btnSize1">Save</button>
     
   </form>
 

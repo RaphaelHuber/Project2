@@ -66,6 +66,14 @@ router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render('teams', { user: req.user });
 });
 
+router.get('/pokeList', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  Pokemon.find({ trainer: req.user.username })
+    .then((allPokemon) => {
+      res.render('pokeList', { allPokemon });
+    });
+});
+
+
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/teams',
   failureRedirect: '/login',
@@ -73,7 +81,7 @@ router.post('/login', passport.authenticate('local', {
   passReqToCallback: true
 }));
 
-router.get('/createPokemon', (req, res) => {
+router.get('/createPokemon', ensureLogin.ensureLoggedIn(), (req, res) => {
   Species.find({})
     .then((allSpecies) => {
       res.render('createPokemon', { allSpecies });
@@ -172,10 +180,6 @@ router.post('/createPokemon', (req, res) => {
       });
     });
 });
-
-// router.get('/teams', (req, res, next) => {
-//   res.render('teams');
-// });
 
 router.get('/logout', (req, res) => {
   req.logout();
