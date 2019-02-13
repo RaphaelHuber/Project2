@@ -129,6 +129,10 @@ router.get('/loadAllNatures', (req, res) => {
     });
 });
 
+router.get('/teamDetail', (req, res, next) => {
+  res.render('teamDetail');
+});
+
 router.post('/createPokemon', (req, res) => {
   const trainer = req.user.username;
   const item = req.body.createItem;
