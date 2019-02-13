@@ -1,32 +1,7 @@
-<div class="containerRow fullScreen">
-
-  <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
-
-    <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
-    
-      <div class="sidebarMargin1"> 
-        Trainer {{user.username}}
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Teams</a>
-        <a href="/pokeList" class="list-group-item list-group-item-action bg-light noBorder">Pokemon</a>
-        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
-      </div>
-      <div class="sidebarLogout">
-         <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
-      </div>
-
-    </div>
-
+<div class="containerColumn center"> <!-- teams -->
+  <div class="containerColumn teamMargin1"> <!-- first team -->
+    {{#each allTeams}}
+      {{> teamCard this }}
+    {{/each}}
   </div>
-
-  <div class="containerColumn center"> <!-- teams -->
-    <div class="containerColumn teamMargin1"> <!-- first team -->
-      {{#each allTeams}}
-        {{> teamCard this }}
-      {{/each}}
-    </div>
-  </div>
-
 </div>
