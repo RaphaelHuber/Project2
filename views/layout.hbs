@@ -11,10 +11,32 @@
     <script src="/javascripts/scripts.js"></script>
   </head>
   <body>
+    <div class="containerRow fullScreen">
 
+      <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
+
+        <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
+        
+          <div class="sidebarMargin1"> 
+            Trainer {{user.username}}
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Teams</a>
+            <a href="/pokeList" class="list-group-item list-group-item-action bg-light noBorder">Pokemon</a>
+            <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
+          </div>
+          <div class="sidebarLogout">
+            <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
+          </div>
+
+        </div>
+
+      </div>
     
+      {{{body}}}
 
-    {{{body}}}
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -127,12 +127,11 @@ p {
 
 /* Poke cards */
 .pokeListImg {
-  width: 10vw;
+  width: 130px;
   margin: 0 auto;
 }
 
 .cardDesign1 {
-  height: 56vh;
   width: 18vw;
   min-width: 220px;
   background-color: #F3D91F;

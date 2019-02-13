@@ -19,11 +19,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/login', (req, res, next) => {
-  res.render('login', { message: req.flash('error') });
+  res.render('login', { message: req.flash('error'), layout: false });
 });
 
 router.get('/signup', (req, res, next) => {
-  res.render('signup');
+  res.render('signup', { layout: false });
 });
 
 router.post('/signup', (req, res, next) => {
