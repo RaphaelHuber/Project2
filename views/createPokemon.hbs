@@ -68,20 +68,20 @@
           </select>
         </form>
 
-        <div class="containerRow container-margin1"> <!-- Type and power -->
+        <div class="containerRow container-margin1"> <!-- Type and category -->
 
           <div class="containerColumn container-margin1"> <!-- Type -->
-            <p>Type 1</p>
-            <p>Type 2</p>
-            <p>Type 3</p>
-            <p>Type 4</p>
+            <img class="typesMargin1 topMargin1" id="type1Img" src="/images/types/electric.png">
+            <img class="typesMargin1"  id="type2Img" src="/images/types/fire.png">
+            <img class="typesMargin1"  id="type3Img" src="/images/types/ice.png">
+            <img class="typesMargin1"  id="type4Img" src="/images/types/steel.png">
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- Power -->
-            <p>Power 1</p>
-            <p>Power 2</p>
-            <p>Power 3</p>
-            <p>Power 4</p>
+          <div class="containerColumn container-margin1"> <!-- Category -->
+            <img class="categoryMargin1 topMargin1" id="category1Img" src="/images/categories/physical.png">
+            <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
+            <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
+            <img class="categoryMargin1" id="category1Img" src="/images/categories/status.png">
           </div>
 
         </div>
@@ -98,26 +98,26 @@
 
           <div class="containerColumn"> <!-- Base Stats -->
 
-            <label>Base Stats</label> <!-- Base Stats title -->
+            <label class="center">Base Stats</label> <!-- Base Stats title -->
 
             <div class="containerRow">
 
               <div class="containerColumn container-margin1">  <!-- Base Stats names -->
-                  <p>HP</p>
-                  <p>Atk</p>
-                  <p>Def</p>
-                  <p>SpAtk</p>
-                  <p>SpDef</p>
-                  <p>Spe</p>
+                <p class="labelMargin1">HP</p>
+                <p class="labelMargin1">Atk</p>
+                <p class="labelMargin1">Def</p>
+                <p class="labelMargin1">SpAtk</p>
+                <p class="labelMargin1">SpDef</p>
+                <p class="labelMargin1">Spe</p>
               </div>
 
               <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
-                  <p id="baseStatHP">0</p>
-                  <p id="baseStatAtk">0</p>
-                  <p id="baseStatDef">0</p>
-                  <p id="baseStatSpAtk">0</p>
-                  <p id="baseStatSpDef">0</p>
-                  <p id="baseStatSpe">0</p>
+                <p class="labelMargin1" id="baseStatHP">0</p>
+                <p class="labelMargin1" id="baseStatAtk">0</p>
+                <p class="labelMargin1" id="baseStatDef">0</p>
+                <p class="labelMargin1" id="baseStatSpAtk">0</p>
+                <p class="labelMargin1" id="baseStatSpDef">0</p>
+                <p class="labelMargin1" id="baseStatSpe">0</p>
               </div>
             
             </div>
@@ -125,7 +125,7 @@
           </div>
 
           <div class="containerColumn container-margin1"> <!-- IV -->
-            <label class="">IV</label>
+            <label class="center">IV</label>
               <div class="containerColumn container-margin1">
                 <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV1">
                 <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV2">
@@ -137,7 +137,7 @@
           </div>
 
           <div class="containerColumn container-margin1"> <!-- EV -->
-            <label class="">EV</label>
+            <label class="center">EV</label>
               <div class="containerColumn container-margin1">
                 <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV1">
                 <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV2">
@@ -151,12 +151,12 @@
           <div class="containerColumn container-margin1"> <!-- Damage Graph -->
             <p>Total</p>
             <div>
-              <p id="totalHP" class="">0</p>
-              <p id="totalAtk" class="">0</p>
-              <p id="totalDef" class="">0</p>
-              <p id="totalSpAtk" class="">0</p>
-              <p id="totalSpDef" class="">0</p>
-              <p id="totalSpe" class="">0</p>
+              <p class="labelMargin2" id="totalHP" class="">0</p>
+              <p class="labelMargin2" id="totalAtk" class="">0</p>
+              <p class="labelMargin2" id="totalDef" class="">0</p>
+              <p class="labelMargin2" id="totalSpAtk" class="">0</p>
+              <p class="labelMargin2" id="totalSpDef" class="">0</p>
+              <p class="labelMargin2" id="totalSpe" class="">0</p>
             </div>
           </div>
 

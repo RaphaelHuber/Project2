@@ -137,3 +137,23 @@ p {
   background-color: #F3D91F;
   margin: 4vh 0 0 2vw;
 }
+
+.categoryMargin1 {
+  margin: 0 0 25px 0;
+}
+
+.typesMargin1 {
+  margin: 0 0 27.5px 0;
+}
+
+.labelMargin1 {
+  margin: 10px 0 7px 0;
+}
+
+.labelMargin2 {
+  margin: 8px 0 18px 0;
+}
+
+.topMargin1 {
+  margin-top: 40px;
+}
