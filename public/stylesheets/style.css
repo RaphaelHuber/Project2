@@ -1,3 +1,8 @@
+.fullScreen {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
 .containerColumn {
   display: flex;
   flex-direction: column;
@@ -11,19 +16,23 @@
 }
 
 .container-margin1 {
-  margin: 6px 28px;
+  margin: 0.4vh 1.4vw;
 }
 
 .sidebarMargin1 {
-  margin: 18px 22px;
+ text-align: center;
+ margin: 2vh 2vw;
+}
+
+.btnSize1 {
+  width: 8vw;
+  margin: 0 auto;
 }
 
 .sidebarLogout {
-  margin: 450px 0 0 0;
-}
-
-button {
-  width: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   margin: 0 auto;
 }
 
@@ -32,7 +41,16 @@ button {
 }
 
 .dropDown {
-  width: 140px;
+  width: 10vw;
+}
+
+.containerBorder {
+  border: 0.05rem solid #ced4da;
+  border-radius: 0.3rem; 
+}
+
+.teamContainerMargin1 {
+  margin: 3vh 0;
 }
 
 .center {
@@ -40,9 +58,70 @@ button {
 }
 
 .dropDownMargin1 {
-  margin: 2px 0;
+  margin: 0.2vh 0;
 }
 
 .titleMargin1 {
-  margin: 25px;
+  margin: 3vh 2vw;
+}
+
+.titleMargin2 {
+  margin: 2vh auto;
+}
+
+.pokemonDisplay1 {
+  width: 130px;
+  height: 130px;
+  /* background-color: #ced4da; */
+  border-radius: 0.3rem;
+  margin: 2vh 2vw;
+}
+
+
+
+/* hover pokemon  */
+.hiddenBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: 0 !important;
+}
+
+.container {
+  position: relative;
+  width: 130px;
+  border-radius: 0.3rem;
+  margin: 2vh 2vw;
+}
+
+.image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 16px;
 }

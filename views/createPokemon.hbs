@@ -1,17 +1,21 @@
-<div class="containerRow">
+<div class="containerRow fullScreen">
+  
   <div class="d-flex" id="wrapper">  <!-- Sidebar wrapper -->
 
     <div class="bg-light border-right" id="sidebar-wrapper">   <!-- Sidebar -->
+
       <div class="sidebarMargin1"> Pokemaster {{user.username}} </div>
       <div class="list-group list-group-flush">
-        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">Your Teams</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
+        <a href="/teams" class="list-group-item list-group-item-action bg-light noBorder">Your Teams</a>
+        <a href="/createPokemon" class="list-group-item list-group-item-action bg-light noBorder">New Pokemon</a>
         <a href="#" class="list-group-item list-group-item-action bg-light noBorder">Damage Analysis</a>
       </div>
       <div class="sidebarLogout">
          <a href="/logout" class="list-group-item list-group-item-action bg-light noBorder">Logout</a>
       </div>
+
     </div>
+
   </div>
 
   <form action="/createPokemon" method="POST">
@@ -84,7 +88,7 @@
           
         </div>
 
-        <div class="cotainerColumn container-margin1"> <!-- Ability, type and power -->
+        <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
 
           <form class="center"> <!-- Ability -->
             <label for="Abilities">Ability</label>
@@ -123,14 +127,32 @@
 
           <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
 
-            <div class="containerColumn container-margin1">  <!-- Base Stats -->
-              <label>Base Stats</label>
-                <p id="baseStatHP">HP Stat</p>
-                <p id="baseStatAtk">Atk Stat</p>
-                <p id="baseStatDef">Def Stat</p>
-                <p id="baseStatSpAtk">SpAtk Stat</p>
-                <p id="baseStatSpDef">SpDef Stat</p>
-                <p id="baseStatSpe">Spe Stat</p>
+            <div class="containerColumn"> <!-- Base Stats -->
+
+              <label>Base Stats</label> <!-- Base Stats title -->
+
+              <div class="containerRow">
+
+                <div class="containerColumn container-margin1">  <!-- Base Stats names -->
+                    <p>HP Stat</p>
+                    <p>Atk Stat</p>
+                    <p>Def Stat</p>
+                    <p>SpAtk Stat</p>
+                    <p>SpDef Stat</p>
+                    <p>Spe Stat</p>
+                </div>
+
+                <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
+                    <p id="baseStatHP">0</p>
+                    <p id="baseStatAtk">0</p>
+                    <p id="baseStatDef">0</p>
+                    <p id="baseStatSpAtk">0</p>
+                    <p id="baseStatSpDef">0</p>
+                    <p id="baseStatSpe">0</p>
+                </div>
+              
+              </div>
+
             </div>
 
             <div class="containerColumn container-margin1"> <!-- IV -->
@@ -157,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="containerColum container-margin1"> <!-- Damage Graph -->
+            <div class="containerColumn container-margin1"> <!-- Damage Graph -->
               <p>Total</p>
               <div>
                 <p id="totalHP" class="">1</p>
@@ -175,7 +197,7 @@
 
     </div>
 
-    <button type="submit" class="bg-light">Save</button>
+    <button type="submit" class="bg-light btnSize1">Save</button>
     
   </form>
 
