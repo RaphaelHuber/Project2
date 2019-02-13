@@ -142,3 +142,7 @@ function statCalc(base, IV, EV, nature) {
 function HPCalc(base, IV, EV) {
   return Math.floor((2 * base + IV + (EV / 4)) + 100 + 10);
 }
+
+function testFun() {
+  console.log('AAAAHHHH');
+}

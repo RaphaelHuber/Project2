@@ -1,48 +1,40 @@
+button {
+  width: 6vw;
+  margin: 0 auto;
+}
 .containerColumn {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-
 .containerRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .container-margin1 {
-  margin: 6px 28px;
+  margin: 0.2vh 1.4vw;
 }
-
 .sidebarMargin1 {
-  margin: 18px 22px;
+ text-align: center;
+ margin: 2vh;
 }
-
 .sidebarLogout {
-  margin: 450px 0 0 0;
+  margin: 67vh 0 0 0;
+  text-align: center;
 }
-
-button {
-  width: 100px;
-  margin: 0 auto;
-}
-
 .noBorder {
   border: none;
 }
-
 .dropDown {
-  width: 140px;
+  width: 10vw;
 }
-
 .center {
   margin: 0 auto;
 }
-
 .dropDownMargin1 {
-  margin: 2px 0;
+  margin: 0.2vh 0;
 }
-
 .titleMargin1 {
-  margin: 25px;
+  margin: 1.8vh 2vw;
 }

@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <form action="/createPokemon" method="POST">
+  <form action="/createPokemon" method="POST" onchange="calculateStats()">
     <div class="containerColumn"> <!-- Main -->
 
       <h1 class="titleMargin1">Create Pokémon</h1> <!-- Page title -->
@@ -25,8 +25,8 @@
 
           <div> <!-- Select the pokemon -->
 
-              <select class="form-control dropDown" id="speciesSelect" name="lookingfor" onchange="loadSpecies()">
-                <option>Pokémon</option>
+              <select class="form-control dropDown" id="speciesSelect" onchange="loadSpecies()" name="speciesName">
+                <option hidden>Pokémon</option>
                 {{#each allSpecies}}
                   <option>{{ this.name }}</option>
                 {{/each}}
@@ -57,38 +57,34 @@
         <div class="containerColumn container-margin1"> <!-- Item, moves -->
 
           <div> <!-- Select pokemon item -->
-            <form>
               <label for="Items">Item</label>
-              <select class="form-control dropDown" id="itemSelect" onchange="">
+              <select class="form-control dropDown" id="itemSelect" name="createItem">
               </select>
-            </form>
           </div>
 
-          <form> <!-- Select pokemon moves -->
             <div class="containerColumn">
               <label>Moves</label>
-              <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="">
+              <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
                 <option>Move 1</option>
               </select>
-              <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="">
+              <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
                 <option>Move 2</option>
               </select>
-              <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="">
+              <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
                 <option>Move 3</option>
               </select>
-              <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="">
+              <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
                 <option>Move 4</option>
               </select>
             </div>
-          </form>
           
         </div>
 
-        <div class="cotainerColumn container-margin1"> <!-- Ability, type and power -->
+        <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
 
           <form class="center"> <!-- Ability -->
             <label for="Abilities">Ability</label>
-            <select class="form-control dropDown" id="abilitySelect" onchange="">
+            <select class="form-control dropDown" id="abilitySelect" name="createAbility">
               <option></option>
             </select>
           </form>
@@ -113,13 +109,11 @@
           
         </div>
 
-        <div class="containerColumn container-margin1"> <!-- Nature, base stats, IV, EV and damage --> 
-          <form class="center">
+        <div class="containerColumn container-margin1 center"> <!-- Nature, base stats, IV, EV and damage --> 
             <label for="Natures">Nature</label>
-            <select class="form-control dropDown" id="natureSelect" onchange="">
+            <select class="form-control dropDown" id="natureSelect" name="createNature">
               <option>Lonely</option>
             </select>
-          </form>
 
           <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
 
@@ -136,36 +130,36 @@
             <div class="containerColumn container-margin1"> <!-- IV -->
               <label class="">IV</label>
                 <div class="containerColumn container-margin1">
-                  <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
-                  <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
-                  <input id="inputIV3" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
-                  <input id="inputIV4" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
-                  <input id="inputIV5" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
-                  <input id="inputIV6" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31">
+                  <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV1">
+                  <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV2">
+                  <input id="inputIV3" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV3">
+                  <input id="inputIV4" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV4">
+                  <input id="inputIV5" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV5">
+                  <input id="inputIV6" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV6">
                 </div>
             </div>
 
             <div class="containerColumn container-margin1"> <!-- EV -->
               <label class="">EV</label>
                 <div class="containerColumn container-margin1">
-                  <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
-                  <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
-                  <input id="inputEV3" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
-                  <input id="inputEV4" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
-                  <input id="inputEV5" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
-                  <input id="inputEV6" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0">
+                  <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV1">
+                  <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV2">
+                  <input id="inputEV3" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV3">
+                  <input id="inputEV4" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV4">
+                  <input id="inputEV5" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV5">
+                  <input id="inputEV6" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV6">
                 </div>
             </div>
 
             <div class="containerColum container-margin1"> <!-- Damage Graph -->
               <p>Total</p>
               <div>
-                <p id="totalHP" class="">1</p>
-                <p id="totalAtk" class="">2</p>
-                <p id="totalDef" class="">3</p>
-                <p id="totalSpAtk" class="">4</p>
-                <p id="totalSpDef" class="">5</p>
-                <p id="totalSpe" class="">6</p>
+                <p id="totalHP" class="">0</p>
+                <p id="totalAtk" class="">0</p>
+                <p id="totalDef" class="">0</p>
+                <p id="totalSpAtk" class="">0</p>
+                <p id="totalSpDef" class="">0</p>
+                <p id="totalSpe" class="">0</p>
               </div>
             </div>
 
