@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const teamSchema = new Schema({
   name: String,
-  pokemon: [Schema.Types.ObjectId]
+  trainer: String,
+  pokemon: [{ type: Schema.Types.ObjectId, ref: 'Pokemon' }]
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });

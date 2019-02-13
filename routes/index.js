@@ -10,6 +10,7 @@ const Species = require('../models/Species');
 const Item = require('../models/Item');
 const Nature = require('../models/Nature');
 const Pokemon = require('../models/Pokemon');
+const Team = require('../models/Team');
 
 const bcryptSalt = 10;
 
@@ -63,7 +64,11 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  res.render('teams', { user: req.user });
+  Team.find({ trainer: req.user.username })
+    .populate('pokemon')
+    .then((allTeams) => {
+      res.render('teams', { allTeams });
+    });
 });
 
 router.get('/pokeList', ensureLogin.ensureLoggedIn(), (req, res, next) => {
@@ -85,6 +90,14 @@ router.get('/createPokemon', ensureLogin.ensureLoggedIn(), (req, res) => {
   Species.find({})
     .then((allSpecies) => {
       res.render('createPokemon', { allSpecies });
+    });
+});
+
+router.get('/editPokemon/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Pokemon.findOne({ _id: req.params.id })
+    .then((edited) => {
+      console.log(edited);
+      res.render('editPokemon', { edited });
     });
 });
 

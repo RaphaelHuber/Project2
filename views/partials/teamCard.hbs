@@ -1,0 +1,12 @@
+<div class="containerRow containerBorder"> <!-- first team pokemons -->
+  <div>
+    <h3 class="center titleMargin2">{{this.name}}</h3>
+  </div>
+
+  {{#each this.pokemon}}
+    <div class="container"> 
+      <img src="{{this.frontSprite}}" class="image">
+      <a class="text hiddenBtn middle" href="/editPokemon/{{this.id}}">Edit</a>
+    </div>
+  {{/each}}
+</div>
