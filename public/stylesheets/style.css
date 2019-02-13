@@ -15,6 +15,11 @@ body {
   align-items: center;
 }
 
+.containerMin1 {
+  min-width: 500px;
+  flex-wrap: wrap;
+}
+
 .containerColumn {
   display: flex;
   flex-direction: column;
@@ -61,6 +66,7 @@ body {
 .containerBorder {
   border: 0.05rem solid #ced4da;
   border-radius: 0.3rem; 
+  flex-wrap: wrap;
 }
 
 .teamContainerMargin1 {
