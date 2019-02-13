@@ -7,8 +7,8 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 const teams = [
   {
     name: 'Test3',
-    trainer: 'Gui',
-    pokemon: ['5c6442a295c4a13f92c95163', '5c64432795c4a13f92c95165', '5c6448e10d81204866435093', '5c6448e70d81204866435095', '5c6448e70d81204866435095']
+    trainer: 'Raph',
+    pokemon: ['5c646c7a2781c45d0b032ec2', '5c64541ca916c85528271824', '5c64540aa916c85528271823', '5c6453eea916c85528271822', '5c6449f3b2651950920e3aa8', '5c6449c6b2651950920e3aa7']
   }
 ];
 

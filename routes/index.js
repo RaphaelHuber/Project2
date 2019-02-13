@@ -198,6 +198,10 @@ router.post('/createPokemon', (req, res) => {
     });
 });
 
+router.get('/damageAnalysis', (req, res, next) => {
+  res.render('damageAnalysis');
+});
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
