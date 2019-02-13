@@ -96,7 +96,6 @@ router.get('/createPokemon', ensureLogin.ensureLoggedIn(), (req, res) => {
 router.get('/editPokemon/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
   Pokemon.findOne({ _id: req.params.id })
     .then((edited) => {
-      console.log(edited);
       res.render('editPokemon', { edited });
     });
 });
