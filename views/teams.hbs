@@ -4,4 +4,12 @@
       {{> teamCard this }}
     {{/each}}
   </div>
+
+  <form action="/createTeam" method="POST" id="form-container">
+    <div class="form-group">
+      <label for="newTeam">Create new team:</label>
+      <input type="text" class="form-control" id="newTeam" name="newTeam">
+    </div>
+    <button type="submit">Create</button>
+  </form>
 </div>

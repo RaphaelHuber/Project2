@@ -132,6 +132,13 @@ router.get('/teamDetail', (req, res, next) => {
   res.render('teamDetail');
 });
 
+router.get('/addToTeam/:id', (req, res, next) => {
+  Pokemon.find({ trainer: req.user.username })
+    .then((allPokemon) => {
+      res.render('addToTeam', { allPokemon, teamID: req.params.id });
+    });
+});
+
 router.post('/createPokemon', (req, res) => {
   const trainer = req.user.username;
   const item = req.body.createItem;
@@ -194,6 +201,69 @@ router.post('/createPokemon', (req, res) => {
           res.redirect('/createPokemon');
         }
       });
+    });
+});
+
+router.post('/editPokemon', (req, res) => {
+  const item = req.body.createItem;
+  const nature = req.body.createNature;
+  const ability = req.body.createAbility;
+  const moves = [req.body.createMove1, req.body.createMove2, req.body.createMove3, req.body.createMove4];
+  const IV1 = req.body.createIV1;
+  const IV2 = req.body.createIV2;
+  const IV3 = req.body.createIV3;
+  const IV4 = req.body.createIV4;
+  const IV5 = req.body.createIV5;
+  const IV6 = req.body.createIV6;
+  const EV1 = req.body.createEV1;
+  const EV2 = req.body.createEV2;
+  const EV3 = req.body.createEV3;
+  const EV4 = req.body.createEV4;
+  const EV5 = req.body.createEV5;
+  const EV6 = req.body.createEV6;
+  console.log('IDDD', req.body.editedPokeID);
+
+  Pokemon.updateOne({ _id: req.body.editedPokeID }, { $set: { item, nature, ability, moves, ivs: { HP: IV1, Atk: IV2, Def: IV3, SpAtk: IV4, SpDef: IV5, Spe: IV6 }, evs: { HP: EV1, Atk: EV2, Def: EV3, SpAtk: EV4, SpDef: EV5, Spe: EV6 } } })
+    .then(() => {
+      res.redirect('/pokeList');
+    })
+    .catch((err) => {
+      console.log('Error', err);
+    });
+});
+
+router.post('/createTeam', (req, res) => {
+  const name = req.body.newTeam;
+  const trainer = req.user.username;
+
+  const newTeam = new Team({
+    name,
+    trainer
+  });
+
+  newTeam.save((err) => {
+    if (err) {
+      res.render('teams', { message: 'Error' });
+    } else {
+      res.redirect('/teams');
+    }
+  });
+});
+
+router.get('/loadTeam/:id', (req, res) => {
+  Team.findOne({ _id: req.params.id })
+    .then((selected) => {
+      res.send(selected);
+    });
+});
+
+router.patch('/addPoke/:teamID/:pokeID', (req, res) => {
+  Team.updateOne({ _id: req.params.teamID }, { $push: { pokemon: req.params.pokeID } })
+    .then(() => {
+      res.redirect('/teams');
+    })
+    .catch((err) => {
+      console.log('Error', err);
     });
 });
 

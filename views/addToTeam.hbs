@@ -1,0 +1,9 @@
+<script src="/javascripts/scripts.js"></script>
+
+<span id="teamEditID" style="display:none">{{teamID}}</span>
+
+<div class="containerRow flex-wrap">
+  {{#each allPokemon}}
+    {{> addCard this }}
+  {{/each}}
+</div>

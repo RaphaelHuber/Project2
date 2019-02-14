@@ -7,6 +7,7 @@ let creatorType2 = '';
 let creatorBaseStats = {};
 
 function loadSpecies() {
+  console.log('LOAD SPECIES');
   const selected = document.getElementById('speciesSelect').value;
   axios.get(`http://localhost:3000/loadOneSpecies/${selected}`)
     .then((species) => {
@@ -17,6 +18,22 @@ function loadSpecies() {
       loadMoves(species);
       loadNatures();
       loadItems();
+      calculateStats();
+    });
+}
+
+function loadEdit() {
+  console.log('LOAD EDIT');
+  const selected = document.getElementById('speciesSelect').value;
+  axios.get(`http://localhost:3000/loadOneSpecies/${selected}`)
+    .then((species) => {
+      feedSpecies(species);
+      loadSprite(species);
+      loadBaseStats(species);
+      loadEditAbility(species);
+      loadEditMoves(species);
+      loadEditNature();
+      loadEditItem();
       calculateStats();
     });
 }
@@ -94,6 +111,19 @@ function loadAbilities(species) {
   abilityPanel.innerHTML = abilityHTML;
 }
 
+function loadEditAbility(species) {
+  const abilityPanel = document.getElementById('abilitySelect');
+  let abilityHTML = '';
+  const previousAbility = document.getElementById('editedSpanAbility').innerText;
+  abilityHTML += `<option>${previousAbility}</option>`;
+  species.data[0].abilities.forEach((ability) => {
+    if (ability !== previousAbility) {
+      abilityHTML += `<option>${ability}</option>`;
+    }
+  });
+  abilityPanel.innerHTML = abilityHTML;
+}
+
 function loadMoves(species) {
   let movesHTML = '';
   species.data[0].moves.forEach((move) => {
@@ -111,6 +141,54 @@ function loadMoves(species) {
   movesSelect4.innerHTML = movesHTML;
 }
 
+function loadEditMoves(species) {
+  let move1HTML = '';
+  const previousMove1 = document.getElementById('editedSpanMove1').innerText;
+  move1HTML += `<option>${previousMove1}</option>`;
+  species.data[0].moves.forEach((move) => {
+    if (move !== previousMove1) {
+      move1HTML += `<option>${move}</option>`;
+    }
+  });
+
+  let move2HTML = '';
+  const previousMove2 = document.getElementById('editedSpanMove2').innerText;
+  move2HTML += `<option>${previousMove2}</option>`;
+  species.data[0].moves.forEach((move) => {
+    if (move !== previousMove2) {
+      move2HTML += `<option>${move}</option>`;
+    }
+  });
+
+  let move3HTML = '';
+  const previousMove3 = document.getElementById('editedSpanMove3').innerText;
+  move3HTML += `<option>${previousMove3}</option>`;
+  species.data[0].moves.forEach((move) => {
+    if (move !== previousMove3) {
+      move3HTML += `<option>${move}</option>`;
+    }
+  });
+
+  let move4HTML = '';
+  const previousMove4 = document.getElementById('editedSpanMove4').innerText;
+  move4HTML += `<option>${previousMove4}</option>`;
+  species.data[0].moves.forEach((move) => {
+    if (move !== previousMove4) {
+      move4HTML += `<option>${move}</option>`;
+    }
+  });
+
+  const movesSelect1 = document.getElementById('movesSelect1');
+  const movesSelect2 = document.getElementById('movesSelect2');
+  const movesSelect3 = document.getElementById('movesSelect3');
+  const movesSelect4 = document.getElementById('movesSelect4');
+
+  movesSelect1.innerHTML = move1HTML;
+  movesSelect2.innerHTML = move2HTML;
+  movesSelect3.innerHTML = move3HTML;
+  movesSelect4.innerHTML = move4HTML;
+}
+
 function loadItems() {
   axios.get('http://localhost:3000/loadAllItems')
     .then((items) => {
@@ -118,6 +196,22 @@ function loadItems() {
       let itemHTML = '';
       items.data.forEach((item) => {
         itemHTML += `<option>${item.name}</option>`;
+      });
+      itemPanel.innerHTML = itemHTML;
+    });
+}
+
+function loadEditItem() {
+  axios.get('http://localhost:3000/loadAllItems')
+    .then((items) => {
+      const itemPanel = document.getElementById('itemSelect');
+      let itemHTML = '';
+      const previousItem = document.getElementById('editedSpanItem').innerText;
+      itemHTML += `<option>${previousItem}</option>`;
+      items.data.forEach((item) => {
+        if (item.name !== previousItem) {
+          itemHTML += `<option>${item.name}</option>`;
+        }
       });
       itemPanel.innerHTML = itemHTML;
     });
@@ -135,6 +229,22 @@ function loadNatures() {
     });
 }
 
+function loadEditNature() {
+  axios.get('http://localhost:3000/loadAllNatures')
+    .then((natures) => {
+      const naturesPanel = document.getElementById('natureSelect');
+      let natureHTML = '';
+      const previousNature = document.getElementById('editedSpanNature').innerText;
+      natureHTML += `<option>${previousNature}</option>`;
+      natures.data.forEach((nature) => {
+        if (nature.name !== previousNature) {
+          natureHTML += `<option>${nature.name}</option>`;
+        }
+      });
+      naturesPanel.innerHTML = natureHTML;
+    });
+}
+
 function statCalc(base, IV, EV, nature) {
   return Math.floor(((((2 * base + IV + (EV / 4))) + 5) * nature));
 }
@@ -143,6 +253,16 @@ function HPCalc(base, IV, EV) {
   return Math.floor((2 * base + IV + (EV / 4)) + 100 + 10);
 }
 
-function testFun() {
-  console.log('AAAAHHHH');
+function addToTeam(pokeID) {
+  const teamID = document.getElementById('teamEditID').innerText;
+  axios.patch(`http://localhost:3000/addPoke/${teamID}/${pokeID}`);
+  // .then((team) => {
+  //   let newTeam = team.data.pokemon.slice();
+  //   newTeam.push(pokeID);
+  //   axios.patch(`http://localhost:3000/loadTeam/${teamID}`, newTeam);
+}
+
+
+function testFunction() {
+  console.log('SIGNAL');
 }
