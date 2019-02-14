@@ -188,7 +188,7 @@ const species = [
       SpDef: 100,
       Spe: 80
     },
-    moves: ['Body Slam', 'Barrier', 'Dragon Claw', 'Earthquake', 'Focus Blast', 'Surf', 'Thunderbolt'],
+    moves: ['Body Slam', 'Barrier', 'Dragon Claw', 'Earthquake', 'Focus Blast', 'Thunderbolt'],
     abilities: ['Inner Focus']
   }
 ];

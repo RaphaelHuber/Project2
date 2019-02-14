@@ -1,18 +1,23 @@
 const moves = {
   'Aerial Ace': {
-    type: '',
-    power: ,
+    type: 'Flying',
+    power: 60,
     category: 'Physical'
   },
   'Aqua Jet': {
-    type: '',
-    power: ,
+    type: 'Water',
+    power: 40,
     category: 'Physical'
   },
+  'Barrier': {
+    type: 'Psychic',
+    power: 0,
+    category: 'Status'
+  },
   'Blizzard': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Ice',
+    power: 120,
+    category: 'Special'
   },
   'Body Slam': {
     type: 'Normal',
@@ -20,29 +25,29 @@ const moves = {
     category: 'Physical'
   },
   'Brick Break': {
-    type: '',
-    power: ,
+    type: 'Fighting',
+    power: 75,
     category: 'Physical'
   },
   'Calm Mind': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Psychic',
+    power: 0,
+    category: 'Status'
   },
   'Crunch': {
-    type: '',
-    power: ,
+    type: 'Dark',
+    power: 80,
     category: 'Physical'
   },
   'Dragon Claw': {
-    type: '',
-    power: ,
+    type: 'Dragon',
+    power: 80,
     category: 'Physical'
   },
   'Dragon Dance': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Dragon',
+    power: 0,
+    category: 'Status'
   },
   'Earthquake': {
     type: 'Ground',
@@ -50,19 +55,19 @@ const moves = {
     category: 'Physical'
   },
   'Fire Punch': {
-    type: '',
-    power: ,
+    type: 'Fire',
+    power: 75,
     category: 'Physical'
   },
   'Flamethrower': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Fire',
+    power: 90,
+    category: 'Special'
   },
   'Focus Blast': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Fighting',
+    power: 120,
+    category: 'Special'
   },
   'Giga Drain': {
     type: 'Grass',
@@ -70,113 +75,113 @@ const moves = {
     category: 'Special'
   },
   'Headbutt': {
-    type: '',
-    power: ,
+    type: 'Normal',
+    power: 70,
     category: 'Physical'
   },
   'Hydro Pump': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Water',
+    power: 120,
+    category: 'Special'
   },
   'Hyper Beam': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Normal',
+    power: 150,
+    category: 'Special'
   },
   'Ice Beam': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Ice',
+    power: 90,
+    category: 'Special'
   },
   'Ice Fang': {
-    type: '',
-    power: ,
+    type: 'Ice',
+    power: 65,
     category: 'Physical'
   },
   'Leaf Storm': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Grass',
+    power: 120,
+    category: 'Special'
   },
   'Mega Punch': {
-    type: '',
-    power: ,
+    type: 'Normal',
+    power: 80,
     category: 'Physical'
   },
   'Psychic': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Psychic',
+    power: 90,
+    category: 'Special'
   },
   'Rain Dance': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Water',
+    power: 0,
+    category: 'Status'
   },
   'Recover': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Normal',
+    power: 0,
+    category: 'Status'
   },
   'Rest': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Psychic',
+    power: 0,
+    category: 'Status'
   },
   'Roar': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Normal',
+    power: 0,
+    category: 'Status'
   },
   'Sludge Bomb': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Poison',
+    power: 90,
+    category: 'Special'
   },
   'Solar Beam': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Grass',
+    power: 120,
+    category: 'Special'
   },
   'Shadow Ball': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Ghost',
+    power: 80,
+    category: 'Special'
   },
   'Sleep Talk': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Normal',
+    power: 0,
+    category: 'Status'
   },
   'Stone Edge': {
-    type: '',
-    power: ,
+    type: 'Rock',
+    power: 100,
     category: 'Physical'
   },
   'Swift': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Normal',
+    power: 60,
+    category: 'Special'
   },
   'Thunder Punch': {
-    type: '',
-    power: ,
+    type: 'Electric',
+    power: 75,
     category: 'Physical'
   },
   'Thunder Wave': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Electric',
+    power: 0,
+    category: 'Status'
   },
   'Thunderbolt': {
-    type: '',
-    power: ,
-    category: 'Physical'
+    type: 'Electric',
+    power: 90,
+    category: 'Special'
   },
   'Waterfall': {
-    type: '',
-    power: ,
+    type: 'Water',
+    power: 80,
     category: 'Physical'
   },
   

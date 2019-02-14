@@ -13,6 +13,7 @@ function loadSpecies() {
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
+      loadFunFacts(species);
       loadBaseStats(species);
       loadAbilities(species);
       loadMoves(species);
@@ -281,6 +282,11 @@ function HPCalc(base, IV, EV) {
 function addToTeam(pokeID) {
   const teamID = document.getElementById('teamEditID').innerText;
   axios.patch(`http://localhost:3000/addPoke/${teamID}/${pokeID}`);
+}
+
+function loadFunFacts(species) {
+  console.log(species.funFacts);
+  document.getElementById('funFactsPanel').innerHTML = `<li>${species.data[0].funFacts[0]}</li><li>${species.data[0].funFacts[1]}</li>`;
 }
 
 function testFunction() {
