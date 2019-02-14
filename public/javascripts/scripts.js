@@ -31,6 +31,7 @@ function loadEdit() {
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
+      loadFunFacts(species);
       loadBaseStats(species);
       loadEditAbility(species);
       loadEditMoves(species);
