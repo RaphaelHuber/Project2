@@ -7,13 +7,15 @@
     {{#each this.pokemon}}
       <div class="container"> 
         <img src="{{this.frontSprite}}" class="image">
-        <a class="text hiddenBtn middle" href="/editPokemon/{{this.id}}">Remove</a>
+        <a class="text hiddenBtn middle" href="/removePokemon/{{../this.id}}/{{this.id}}">Remove</a>
       </div>
     {{/each}}
 
-  </div>
-
   {{#unless this.pokemon.[5]}}
-    <a href="/addToTeam/{{this.id}}">Add</a>
+    <div class="container"> 
+      <a class="text hiddenBtn middle-add" href="/addToTeam/{{this.id}}">Add</a>
+    </div>
   {{/unless}}
+
+  </div>
 </div>
