@@ -282,6 +282,20 @@ router.get('/removePokemon/:teamID/:pokeID', (req, res) => {
     });
 });
 
+router.get('/deletePokemon/:pokeID', (req, res) => {
+  Pokemon.deleteOne({ _id: req.params.pokeID })
+    .then(() => {
+      res.redirect('/pokeList');
+    });
+});
+
+router.get('/deleteTeam/:teamID', (req, res) => {
+  Team.deleteOne({ _id: req.params.teamID })
+    .then(() => {
+      res.redirect('/teams');
+    });
+});
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
