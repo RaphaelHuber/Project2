@@ -47,7 +47,7 @@
 }
 
 .containerMargin1 {
-  margin: 3vh 4vw;
+  margin: 3vh 2vw;
 }
 
 .containerMargin2 {
@@ -84,12 +84,6 @@
 .dropDown {
   width: 10vw;
 }
-
-/* .containerBorder {
-  border: 0.05rem solid #ced4da;
-  border-radius: 0.3rem; 
-  flex-wrap: wrap;
-} */
 
 .teamContainerMargin1 {
   margin: 3vh 0;
