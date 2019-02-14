@@ -1,15 +1,17 @@
 <script src="/javascripts/scripts.js"></script>
+<script src="/javascripts/data.js"></script>
 
 <form action="/editPokemon" method="POST" onchange="calculateStats()">
-  <div class="containerColumn"> <!-- Main -->
+  <div class="containerColumn flex-wrap containerMargin1"> <!-- Main -->
 
-    <div class="containerRow container-margin1"> <!-- select, pic and description -->
+    <div class="containerRow"> <!-- select, pic and description -->
 
-      <div> <!-- Select and picture -->
+      <div> <!-- Select the pokemon and picture -->
 
-        <div> <!-- Select the pokemon -->
+        <div class="selectMargin1"> <!-- Select the pokemon -->
+
             <select class="form-control dropDown" id="speciesSelect" name="speciesName">
-              <option>{{edited.name}}</option>
+                <option>{{edited.name}}</option>
             </select>
             <input id="editedID" style="display:none" name="editedPokeID" value="{{edited.id}}"></input>
             <span id="editedSpanItem" style="display:none">{{edited.item}}</span>
@@ -21,10 +23,8 @@
             <span id="editedSpanMove4" style="display:none">{{edited.moves.[3]}}</span>
         </div>
 
-        <div> <!-- Pokemon picture/frontsprite -->
-          <img id="selectedSprite" src="/images/question.png" width="130" alt="photo">
-          <img src="/images/question.png" width="130" alt="photo" onload="loadEdit()">
-        </div>
+        <img class="imgMargin1" id="selectedSprite" src="/images/question.png" width="130" alt="photo">
+        <img src="/images/question.png" width="130" alt="photo" onload="loadEdit()">
 
       </div>
 
@@ -37,102 +37,119 @@
 
     </div>
 
-    <div class="containerRow"> <!-- Item, moves, ability, type, power, nature, base stats, IV, EV, Damage graph -->
+    <div class="containerRow containerMin1"> <!-- Item, moves, ability, type, category, pokemon save button, nature, base stats, IV, EV, Damage graph -->
 
-      <div class="containerColumn container-margin1"> <!-- Item, moves -->
+      <div class="containerColumn containerMin2"> <!-- Item, moves, ability, type, category and pokemon save button-->
 
-        <div> <!-- Select pokemon item -->
-            <label for="Items">Item</label>
-            <select class="form-control dropDown" id="itemSelect" name="createItem">
-            </select>
+        <div class="containerRow containerMin3">  <!-- Item, moves, ability, type and category -->
+
+          <div class="containerColumn containerMargin3"> <!-- Item, moves -->
+
+            <div> <!-- Select pokemon item -->
+                <label for="Items">Item</label>
+                <select class="form-control dropDown" id="itemSelect" name="createItem">
+                </select>
+            </div>
+
+              <div class="containerColumn containerMargin2">
+                <label>Moves</label>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="updateMoves()" name="createMove1">
+                  <option>Move 1</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="updateMoves()" name="createMove2">
+                  <option>Move 2</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="updateMoves()" name="createMove3">
+                  <option>Move 3</option>
+                </select>
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="updateMoves()" name="createMove4">
+                  <option>Move 4</option>
+                </select>
+              </div>
+            
+          </div>
+
+          <div class="containerColumn containerMargin3"> <!-- Ability, type and power -->
+
+            <form class="center"> <!-- Ability -->
+              <label for="Abilities">Ability</label>
+              <select class="form-control dropDown" id="abilitySelect" name="createAbility">
+                <option></option>
+              </select>
+            </form>
+
+            <div class="containerRow containerMargin2"> <!-- Type and category -->
+
+              <div class="containerColumn containerMargin4"> <!-- Type -->
+                <img class="typesMargin1 topMargin1" id="type1Img" src="">
+                <img class="typesMargin1"  id="type2Img" src="">
+                <img class="typesMargin1"  id="type3Img" src="">
+                <img class="typesMargin1"  id="type4Img" src="">
+              </div>
+
+              <div class="containerColumn containerMargin4"> <!-- Power -->
+                <p class="powerMargin1 topMargin2" id="powerMove1"></p>
+                <p class="powerMargin1" id="powerMove2"></p>
+                <p class="powerMargin1" id="powerMove3"></p>
+                <p class="powerMargin1" id="powerMove4"></p>
+              </div>
+
+              <div class="containerColumn containerMargin4"> <!-- Category -->
+                <img class="categoryMargin1 topMargin1" id="category1Img" src="" alt="">
+                <img class="categoryMargin1" id="category2Img" src="" alt="">
+                <img class="categoryMargin1" id="category3Img" src="" alt="">
+                <img class="categoryMargin1" id="category4Img" src="" alt="">
+              </div>
+
+            </div>
+            
+          </div>
+
         </div>
 
-          <div class="containerColumn">
-            <label>Moves</label>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
-              <option>Move 1</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
-              <option>Move 2</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
-              <option>Move 3</option>
-            </select>
-            <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
-              <option>Move 4</option>
-            </select>
-          </div>
-        
+        <button type="submit" class="btn btnSize1 darkBtn center">Save</button> <!-- pokemon save button -->
+
       </div>
 
-      <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
-
-        <form class="center"> <!-- Ability -->
-          <label for="Abilities">Ability</label>
-          <select class="form-control dropDown" id="abilitySelect" name="createAbility">
-            <option></option>
-          </select>
-        </form>
-
-        <div class="containerRow container-margin1"> <!-- Type and power -->
-
-          <div class="containerColumn container-margin1"> <!-- Type -->
-            <p>Type 1</p>
-            <p>Type 2</p>
-            <p>Type 3</p>
-            <p>Type 4</p>
-          </div>
-
-          <div class="containerColumn container-margin1"> <!-- Power -->
-            <p>Power 1</p>
-            <p>Power 2</p>
-            <p>Power 3</p>
-            <p>Power 4</p>
-          </div>
-
-        </div>
-        
-      </div>
-
-      <div class="containerColumn container-margin1 center"> <!-- Nature, base stats, IV, EV and damage --> 
+      <div class="containerColumn center"> <!-- Nature, base stats, IV, EV and damage --> 
           <label for="Natures">Nature</label>
           <select class="form-control dropDown" id="natureSelect" name="createNature">
             <option hidden>{{edited.nature}}</option>
           </select>
 
-        <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
+        <div class="containerRow containerMargin2"> <!-- Base stats, IV, EV and damage --> 
 
           <div class="containerColumn"> <!-- Base Stats -->
 
-            <label>Base Stats</label> <!-- Base Stats title -->
+            <label class="labelMargin3">Base Stats</label> <!-- Base Stats title -->
 
             <div class="containerRow">
 
-              <div class="containerColumn container-margin1">  <!-- Base Stats names -->
-                  <p>HP</p>
-                  <p>Atk</p>
-                  <p>Def</p>
-                  <p>SpAtk</p>
-                  <p>SpDef</p>
-                  <p>Spe</p>
+              <div class="containerColumn containerMargin3">  <!-- Base Stats names -->
+                <p class="labelMargin1">HP</p>
+                <p class="labelMargin1">Atk</p>
+                <p class="labelMargin1">Def</p>
+                <p class="labelMargin1">SpAtk</p>
+                <p class="labelMargin1">SpDef</p>
+                <p class="labelMargin1">Spe</p>
               </div>
 
-              <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
-                  <p id="baseStatHP">0</p>
-                  <p id="baseStatAtk">0</p>
-                  <p id="baseStatDef">0</p>
-                  <p id="baseStatSpAtk">0</p>
-                  <p id="baseStatSpDef">0</p>
-                  <p id="baseStatSpe">0</p>
+              <div class="containerColumn containerMargin3">  <!-- Base Stats numbers -->
+                <p class="labelMargin1" id="baseStatHP">0</p>
+                <p class="labelMargin1" id="baseStatAtk">0</p>
+                <p class="labelMargin1" id="baseStatDef">0</p>
+                <p class="labelMargin1" id="baseStatSpAtk">0</p>
+                <p class="labelMargin1" id="baseStatSpDef">0</p>
+                <p class="labelMargin1" id="baseStatSpe">0</p>
               </div>
             
             </div>
 
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- IV -->
-            <label class="">IV</label>
-              <div class="containerColumn container-margin1">
+          <div class="containerColumn containerMargin3"> <!-- IV -->
+            <label class="center">IV</label>
+              <div class="containerColumn">
                 <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.HP}}" name="createIV1">
                 <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.Atk}}" name="createIV2">
                 <input id="inputIV3" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.Def}}" name="createIV3">
@@ -142,9 +159,9 @@
               </div>
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- EV -->
-            <label class="">EV</label>
-              <div class="containerColumn container-margin1">
+          <div class="containerColumn containerMargin3"> <!-- EV -->
+            <label class="center">EV</label>
+              <div class="containerColumn">
                 <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.HP}}" name="createEV1">
                 <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.Atk}}" name="createEV2">
                 <input id="inputEV3" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.Def}}" name="createEV3">
@@ -154,15 +171,15 @@
               </div>
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- Damage Graph -->
-            <p>Total</p>
-            <div>
-              <p id="totalHP" class="">0</p>
-              <p id="totalAtk" class="">0</p>
-              <p id="totalDef" class="">0</p>
-              <p id="totalSpAtk" class="">0</p>
-              <p id="totalSpDef" class="">0</p>
-              <p id="totalSpe" class="">0</p>
+          <div class="containerColumn containerMargin3"> <!-- Damage Graph -->
+            <label>Total</label>
+            <div class="center">
+              <p class="labelMargin2" id="totalHP">0</p>
+              <p class="labelMargin2" id="totalAtk">0</p>
+              <p class="labelMargin2" id="totalDef">0</p>
+              <p class="labelMargin2" id="totalSpAtk">0</p>
+              <p class="labelMargin2" id="totalSpDef">0</p>
+              <p class="labelMargin2" id="totalSpe">0</p>
             </div>
           </div>
 
@@ -171,7 +188,5 @@
     </div>
 
   </div>
-
-  <button type="submit" class="btn btn-outline-info btnSize1">Save</button>
   
 </form>

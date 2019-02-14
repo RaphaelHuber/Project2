@@ -36,6 +36,7 @@ function loadEdit() {
       loadEditNature();
       loadEditItem();
       calculateStats();
+      updateMoves();
     });
 }
 

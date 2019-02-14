@@ -169,7 +169,7 @@ const species = [
       SpDef: 110,
       Spe: 30
     },
-    moves: ['Body Slam', 'Brick Break', 'Curse', 'Rest', 'Sleep Talk'],
+    moves: ['Body Slam', 'Brick Break', 'Rest', 'Sleep Talk'],
     abilities: ['Immunity', 'Thick Fat']
   },
   {
