@@ -1,13 +1,13 @@
 <script src="/javascripts/scripts.js"></script>
 
 <form action="/createPokemon" method="POST" onchange="calculateStats()">
-  <div class="containerColumn flex-wrap"> <!-- Main -->
+  <div class="containerColumn flex-wrap containerMargin1"> <!-- Main -->
 
-    <div class="containerRow container-margin1"> <!-- select, pic and description -->
+    <div class="containerRow"> <!-- select, pic and description -->
 
       <div> <!-- Select the pokemon and picture -->
 
-        <div> <!-- Select the pokemon -->
+        <div class="selectMargin1"> <!-- Select the pokemon -->
 
             <select class="form-control dropDown" id="speciesSelect" onchange="loadSpecies()" name="speciesName">
               <option hidden>Pokémon</option>
@@ -18,9 +18,7 @@
           
         </div>
 
-        <div> <!-- Pokemon picture/frontsprite -->
-          <img id="selectedSprite" src="/images/question.png" width="130" alt="photo">
-        </div>
+        <img class="imgMargin1" id="selectedSprite" src="/images/question.png" width="130" alt="photo">
 
       </div>
 
@@ -39,7 +37,7 @@
 
         <div class="containerRow containerMin3">  <!-- Item, moves, ability, type and category -->
 
-          <div class="containerColumn container-margin1"> <!-- Item, moves -->
+          <div class="containerColumn containerMargin3"> <!-- Item, moves -->
 
             <div> <!-- Select pokemon item -->
                 <label for="Items">Item</label>
@@ -47,7 +45,7 @@
                 </select>
             </div>
 
-              <div class="containerColumn">
+              <div class="containerColumn containerMargin2">
                 <label>Moves</label>
                 <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
                   <option>Move 1</option>
@@ -65,7 +63,7 @@
             
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
+          <div class="containerColumn containerMargin3"> <!-- Ability, type and power -->
 
             <form class="center"> <!-- Ability -->
               <label for="Abilities">Ability</label>
@@ -74,16 +72,23 @@
               </select>
             </form>
 
-            <div class="containerRow container-margin1"> <!-- Type and category -->
+            <div class="containerRow containerMargin2"> <!-- Type and category -->
 
-              <div class="containerColumn container-margin1"> <!-- Type -->
+              <div class="containerColumn containerMargin4"> <!-- Type -->
                 <img class="typesMargin1 topMargin1" id="type1Img" src="/images/types/electric.png">
                 <img class="typesMargin1"  id="type2Img" src="/images/types/fire.png">
                 <img class="typesMargin1"  id="type3Img" src="/images/types/ice.png">
                 <img class="typesMargin1"  id="type4Img" src="/images/types/steel.png">
               </div>
 
-              <div class="containerColumn container-margin1"> <!-- Category -->
+              <div class="containerColumn containerMargin4"> <!-- Power -->
+                <p class="powerMargin1 topMargin2" id="powerMove1">0</p>
+                <p class="powerMargin1" id="powerMove2">0</p>
+                <p class="powerMargin1" id="powerMove3">0</p>
+                <p class="powerMargin1" id="powerMove4">0</p>
+              </div>
+
+              <div class="containerColumn containerMargin4"> <!-- Category -->
                 <img class="categoryMargin1 topMargin1" id="category1Img" src="/images/categories/physical.png">
                 <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
                 <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
@@ -96,25 +101,25 @@
 
         </div>
 
-        <button type="submit" class="btn btn-light btnSize1 center">Save</button> <!-- pokemon save button -->
+        <button type="submit" class="btn btnSize1 darkBtn center">Save</button> <!-- pokemon save button -->
 
       </div>
 
-      <div class="containerColumn container-margin1 center"> <!-- Nature, base stats, IV, EV and damage --> 
+      <div class="containerColumn center"> <!-- Nature, base stats, IV, EV and damage --> 
           <label for="Natures">Nature</label>
           <select class="form-control dropDown" id="natureSelect" name="createNature">
             <option>Lonely</option>
           </select>
 
-        <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
+        <div class="containerRow containerMargin2"> <!-- Base stats, IV, EV and damage --> 
 
           <div class="containerColumn"> <!-- Base Stats -->
 
-            <label class="center">Base Stats</label> <!-- Base Stats title -->
+            <label class="labelMargin3">Base Stats</label> <!-- Base Stats title -->
 
             <div class="containerRow">
 
-              <div class="containerColumn container-margin1">  <!-- Base Stats names -->
+              <div class="containerColumn containerMargin3">  <!-- Base Stats names -->
                 <p class="labelMargin1">HP</p>
                 <p class="labelMargin1">Atk</p>
                 <p class="labelMargin1">Def</p>
@@ -123,7 +128,7 @@
                 <p class="labelMargin1">Spe</p>
               </div>
 
-              <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
+              <div class="containerColumn containerMargin3">  <!-- Base Stats numbers -->
                 <p class="labelMargin1" id="baseStatHP">0</p>
                 <p class="labelMargin1" id="baseStatAtk">0</p>
                 <p class="labelMargin1" id="baseStatDef">0</p>
@@ -136,9 +141,9 @@
 
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- IV -->
+          <div class="containerColumn containerMargin3"> <!-- IV -->
             <label class="center">IV</label>
-              <div class="containerColumn container-margin1">
+              <div class="containerColumn">
                 <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV1">
                 <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV2">
                 <input id="inputIV3" class="form-control dropDownMargin1" type="number" min="0" max="31" value="31" name="createIV3">
@@ -148,9 +153,9 @@
               </div>
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- EV -->
+          <div class="containerColumn containerMargin3"> <!-- EV -->
             <label class="center">EV</label>
-              <div class="containerColumn container-margin1">
+              <div class="containerColumn">
                 <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV1">
                 <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV2">
                 <input id="inputEV3" class="form-control dropDownMargin1" type="number" min="0" max="255" value="0" name="createEV3">
@@ -160,15 +165,15 @@
               </div>
           </div>
 
-          <div class="containerColumn container-margin1"> <!-- Damage Graph -->
-            <p>Total</p>
-            <div>
-              <p class="labelMargin2" id="totalHP" class="">0</p>
-              <p class="labelMargin2" id="totalAtk" class="">0</p>
-              <p class="labelMargin2" id="totalDef" class="">0</p>
-              <p class="labelMargin2" id="totalSpAtk" class="">0</p>
-              <p class="labelMargin2" id="totalSpDef" class="">0</p>
-              <p class="labelMargin2" id="totalSpe" class="">0</p>
+          <div class="containerColumn containerMargin3"> <!-- Damage Graph -->
+            <label>Total</label>
+            <div class="center">
+              <p class="labelMargin2" id="totalHP">0</p>
+              <p class="labelMargin2" id="totalAtk">0</p>
+              <p class="labelMargin2" id="totalDef">0</p>
+              <p class="labelMargin2" id="totalSpAtk">0</p>
+              <p class="labelMargin2" id="totalSpDef">0</p>
+              <p class="labelMargin2" id="totalSpe">0</p>
             </div>
           </div>
 
