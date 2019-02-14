@@ -86,10 +86,6 @@
   width: 8vw;
 } 
 
-.btnMargin1 {
-  margin-left: 1.5vw;
-}
-
 .sidebarLogout {
   position: fixed;
   bottom: 0;
@@ -107,8 +103,17 @@
 .teamContainerMargin1 {
   margin: 3vh 0;
 }
+
 .center {
   margin: 0 auto;
+}
+
+/* .centerText {
+  margin: auto 0;
+} */
+
+.textMargin1 {
+  margin: auto auto 35px 0; 
 }
 
 .dropDownMargin1 {
