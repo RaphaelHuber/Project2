@@ -256,12 +256,7 @@ function HPCalc(base, IV, EV) {
 function addToTeam(pokeID) {
   const teamID = document.getElementById('teamEditID').innerText;
   axios.patch(`http://localhost:3000/addPoke/${teamID}/${pokeID}`);
-  // .then((team) => {
-  //   let newTeam = team.data.pokemon.slice();
-  //   newTeam.push(pokeID);
-  //   axios.patch(`http://localhost:3000/loadTeam/${teamID}`, newTeam);
 }
-
 
 function testFunction() {
   console.log('SIGNAL');

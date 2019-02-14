@@ -267,6 +267,17 @@ router.patch('/addPoke/:teamID/:pokeID', (req, res) => {
     });
 });
 
+router.get('/removePokemon/:teamID/:pokeID', (req, res) => {
+  Team.updateOne({ _id: req.params.teamID }, { $pull: { pokemon: req.params.pokeID } })
+    .then(() => {
+      console.log('aooo');
+      res.redirect('/teams');
+    })
+    .catch((err) => {
+      console.log('Error', err);
+    });
+});
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
