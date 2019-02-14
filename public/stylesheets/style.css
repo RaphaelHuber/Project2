@@ -1,9 +1,10 @@
-p {
-  margin-bottom: 0;
-}
 
 body {
   background-color: #FDFDFD;
+}
+
+.noBotMargin {
+  margin-bottom: 0 !important;
 }
 
 .fullScreen {
@@ -166,3 +167,6 @@ body {
 .topMargin1 {
   margin-top: 40px;
 }
+
+/* login */ 
+

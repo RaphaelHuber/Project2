@@ -30,14 +30,14 @@ router.post('/signup', (req, res, next) => {
   const { username, password, email } = req.body;
 
   if (username === '' || password === '' || email === '') {
-    res.render('signup', { message: 'Please fill in all fields' });
+    res.render('signup', { message: 'Please fill in all fields', layout: false });
     return;
   }
 
   User.findOne({ username })
     .then((user) => {
       if (user !== null) {
-        res.render('signup', { message: 'This PokéMaster is already registered' });
+        res.render('signup', { message: 'This PokéMaster is already registered', layout: false  });
         return;
       }
 
@@ -52,7 +52,7 @@ router.post('/signup', (req, res, next) => {
 
       newUser.save((err) => {
         if (err) {
-          res.render('signup', { message: 'Registration ran away!' });
+          res.render('signup', { message: 'Registration ran away!', layout: false  });
         } else {
           res.redirect('/teams');
         }
