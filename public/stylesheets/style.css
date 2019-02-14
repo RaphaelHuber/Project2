@@ -1,10 +1,17 @@
-
-body {
-  background-color: #FDFDFD;
-}
-
 .noBotMargin {
   margin-bottom: 0 !important;
+}
+
+.darkBtn {
+  background-color: #7AD88B;
+}
+
+.selectMargin1 {
+  margin: 2vh 0;
+}
+
+.imgMargin1 {
+  margin: 2vh 0 2vh 0;
 }
 
 .fullScreen {
@@ -39,8 +46,20 @@ body {
   flex-wrap: wrap;
 }
 
-.container-margin1 {
-  margin: 0.4vh 1.4vw;
+.containerMargin1 {
+  margin: 3vh 4vw;
+}
+
+.containerMargin2 {
+  margin: 5vh 0;
+}
+
+.containerMargin3 {
+  margin: 0 5vw 0 0;
+}
+
+.containerMargin4 {
+  margin: 0 3vw 0 0;
 }
 
 .sidebarMargin1 {
@@ -55,8 +74,10 @@ body {
 .sidebarLogout {
   position: fixed;
   bottom: 0;
-  margin: 0 2vw;
+  margin: 2vh auto 2vh 4.4vw;
+  width: 8vw;
 }
+
 .noBorder {
   border: none;
 }
@@ -64,11 +85,11 @@ body {
   width: 10vw;
 }
 
-.containerBorder {
+/* .containerBorder {
   border: 0.05rem solid #ced4da;
   border-radius: 0.3rem; 
   flex-wrap: wrap;
-}
+} */
 
 .teamContainerMargin1 {
   margin: 3vh 0;
@@ -76,9 +97,11 @@ body {
 .center {
   margin: 0 auto;
 }
+
 .dropDownMargin1 {
   margin: 0.2vh 0;
 }
+
 .titleMargin1 {
   margin: 3vh 2vw;
 }
@@ -149,11 +172,11 @@ body {
 }
 
 .categoryMargin1 {
-  margin: 0 0 25px 0;
+  margin: 0 0 28px 0;
 }
 
 .typesMargin1 {
-  margin: 0 0 27.5px 0;
+  margin: 0 0 30px 0;
 }
 
 .labelMargin1 {
@@ -161,12 +184,13 @@ body {
 }
 
 .labelMargin2 {
-  margin: 8px 0 18px 0;
+  margin: 3px 0 17px 0;
+}
+
+.labelMargin3 {
+  margin: 0 0 0 5.9vw;
 }
 
 .topMargin1 {
   margin-top: 40px;
 }
-
-/* login */ 
-
