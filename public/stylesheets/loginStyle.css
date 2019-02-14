@@ -4,6 +4,7 @@ body{
   font:600 16px/18px 'Open Sans',sans-serif;
   background-color: #EDE38B;
 }
+
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}

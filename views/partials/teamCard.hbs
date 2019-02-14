@@ -1,8 +1,8 @@
-<div class="containerColumn">
+<div class="containerColumn flex-wrap">
 
-  <h3 class="center titleMargin2">{{this.name}}</h3>
+  <h3 class="center titleMargin2">{{this.name}}<a class="iconMargin1" href=""><img class="deleteIcon" src="/images/pokeCard/redDelete.png"></a></h3>
 
-  <div class="containerRow containerBorder"> <!-- first team pokemons -->
+  <div class="containerRow containerBorder flex-wrap"> <!-- first team pokemons -->
 
     {{#each this.pokemon}}
       <div class="container"> 
@@ -13,7 +13,7 @@
 
   {{#unless this.pokemon.[5]}}
     <div class="container"> 
-      <a class="text hiddenBtn middle-add" href="/addToTeam/{{this.id}}">Add</a>
+      <a class="text hiddenBtn btnMargin1" href="/addToTeam/{{this.id}}">Add</a>
     </div>
   {{/unless}}
 

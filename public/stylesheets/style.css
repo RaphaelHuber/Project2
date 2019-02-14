@@ -6,8 +6,23 @@
   background-color: #7AD88B;
 }
 
+.right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.iconMargin1 {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
 .selectMargin1 {
   margin: 2vh 0;
+}
+
+.deleteIcon {
+  width: 20px;
+  height: 20px;
 }
 
 .imgMargin1 {
@@ -70,6 +85,10 @@
 .btnSize1 {
   width: 8vw;
 } 
+
+.btnMargin1 {
+  margin-left: 1.5vw;
+}
 
 .sidebarLogout {
   position: fixed;
@@ -168,6 +187,7 @@
 .cardDesign1 {
   width: 18vw;
   min-width: 220px;
+  max-height: 354px;
   background-color: #F3D91F;
   margin: 4vh 0 0 2vw;
 }

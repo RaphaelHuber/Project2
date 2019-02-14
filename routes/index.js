@@ -63,6 +63,10 @@ router.post('/signup', (req, res, next) => {
     });
 });
 
+router.get('/damageAnalysis', (req, res, next) => {
+  res.render('damageAnalysis');
+});
+
 router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   Team.find({ trainer: req.user.username })
     .populate('pokemon')
