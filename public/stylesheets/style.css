@@ -1,5 +1,10 @@
-p {
-  margin-bottom: 0;
+
+body {
+  background-color: #FDFDFD;
+}
+
+.noBotMargin {
+  margin-bottom: 0 !important;
 }
 
 .fullScreen {
@@ -11,13 +16,23 @@ p {
   align-items: center;
 }
 
+.containerMin1 {
+  min-width: 500px;
+  flex-wrap: wrap;
+}
+
 .containerColumn {
   display: flex;
   flex-direction: column;
 }
+
 .containerRow {
   display: flex;
   flex-direction: row;
+}
+
+.noTopPadding {
+  padding-top: 0 !important;
 }
 
 .flex-wrap {
@@ -27,6 +42,7 @@ p {
 .container-margin1 {
   margin: 0.4vh 1.4vw;
 }
+
 .sidebarMargin1 {
  text-align: center;
  margin: 2vh 5vw;
@@ -34,7 +50,6 @@ p {
 
 .btnSize1 {
   width: 8vw;
-  margin: 0 auto;
 } 
 
 .sidebarLogout {
@@ -52,6 +67,7 @@ p {
 .containerBorder {
   border: 0.05rem solid #ced4da;
   border-radius: 0.3rem; 
+  flex-wrap: wrap;
 }
 
 .teamContainerMargin1 {
@@ -88,9 +104,8 @@ p {
 
 .container {
   position: relative;
-  width: 130px;
-  border-radius: 0.3rem;
-  margin: 2vh 2vw;
+  width: 150px;
+  margin: 5px auto;
 }
 
 .image {
@@ -126,14 +141,32 @@ p {
 }
 
 /* Poke cards */
-.pokeListImg {
-  width: 130px;
-  margin: 0 auto;
-}
-
 .cardDesign1 {
   width: 18vw;
   min-width: 220px;
   background-color: #F3D91F;
   margin: 4vh 0 0 2vw;
 }
+
+.categoryMargin1 {
+  margin: 0 0 25px 0;
+}
+
+.typesMargin1 {
+  margin: 0 0 27.5px 0;
+}
+
+.labelMargin1 {
+  margin: 10px 0 7px 0;
+}
+
+.labelMargin2 {
+  margin: 8px 0 18px 0;
+}
+
+.topMargin1 {
+  margin-top: 40px;
+}
+
+/* login */ 
+
