@@ -86,6 +86,10 @@
   width: 8vw;
 } 
 
+.btnMargin1 {
+  margin-left: 1.5vw;
+}
+
 .sidebarLogout {
   position: fixed;
   bottom: 0;
@@ -183,6 +187,7 @@
 .cardDesign1 {
   width: 18vw;
   min-width: 220px;
+  max-height: 354px;
   background-color: #F3D91F;
   margin: 4vh 0 0 2vw;
 }

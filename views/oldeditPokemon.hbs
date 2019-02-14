@@ -1,0 +1,178 @@
+<script src="/javascripts/scripts.js"></script>
+<script src="/javascripts/data.js"></script>
+
+<form action="/editPokemon" method="POST" onchange="calculateStats()">
+  <div class="containerColumn"> <!-- Main -->
+
+    <div class="containerRow container-margin1"> <!-- select, pic and description -->
+
+      <div> <!-- Select and picture -->
+
+        <div> <!-- Select the pokemon -->
+            <select class="form-control dropDown" id="speciesSelect" name="speciesName">
+              <option>{{edited.name}}</option>
+            </select>
+            <input id="editedID" style="display:none" name="editedPokeID" value="{{edited.id}}"></input>
+            <span id="editedSpanItem" style="display:none">{{edited.item}}</span>
+            <span id="editedSpanAbility" style="display:none">{{edited.ability}}</span>
+            <span id="editedSpanNature" style="display:none">{{edited.nature}}</span>
+            <span id="editedSpanMove1" style="display:none">{{edited.moves.[0]}}</span>
+            <span id="editedSpanMove2" style="display:none">{{edited.moves.[1]}}</span>
+            <span id="editedSpanMove3" style="display:none">{{edited.moves.[2]}}</span>
+            <span id="editedSpanMove4" style="display:none">{{edited.moves.[3]}}</span>
+        </div>
+
+        <div> <!-- Pokemon picture/frontsprite -->
+          <img id="selectedSprite" src="/images/question.png" width="130" alt="photo">
+          <img src="/images/question.png" width="130" alt="photo" onload="loadEdit()">
+        </div>
+
+      </div>
+
+      <div> <!-- Pokemon description -->
+        <div> <!-- Pokemon fun facts -->
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="containerRow"> <!-- Item, moves, ability, type, power, nature, base stats, IV, EV, Damage graph -->
+
+      <div class="containerColumn container-margin1"> <!-- Item, moves -->
+
+        <div> <!-- Select pokemon item -->
+            <label for="Items">Item</label>
+            <select class="form-control dropDown" id="itemSelect" name="createItem">
+            </select>
+        </div>
+
+          <div class="containerColumn">
+            <label>Moves</label>
+            <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
+              <option>Move 1</option>
+            </select>
+            <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
+              <option>Move 2</option>
+            </select>
+            <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
+              <option>Move 3</option>
+            </select>
+            <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
+              <option>Move 4</option>
+            </select>
+          </div>
+        
+      </div>
+
+      <div class="containerColumn container-margin1"> <!-- Ability, type and power -->
+
+        <form class="center"> <!-- Ability -->
+          <label for="Abilities">Ability</label>
+          <select class="form-control dropDown" id="abilitySelect" name="createAbility">
+            <option></option>
+          </select>
+        </form>
+
+        <div class="containerRow container-margin1"> <!-- Type and power -->
+
+          <div class="containerColumn container-margin1"> <!-- Type -->
+            <p>Type 1</p>
+            <p>Type 2</p>
+            <p>Type 3</p>
+            <p>Type 4</p>
+          </div>
+
+          <div class="containerColumn container-margin1"> <!-- Power -->
+            <p>Power 1</p>
+            <p>Power 2</p>
+            <p>Power 3</p>
+            <p>Power 4</p>
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div class="containerColumn container-margin1 center"> <!-- Nature, base stats, IV, EV and damage --> 
+          <label for="Natures">Nature</label>
+          <select class="form-control dropDown" id="natureSelect" name="createNature">
+            <option hidden>{{edited.nature}}</option>
+          </select>
+
+        <div class="containerRow container-margin1"> <!-- Base stats, IV, EV and damage --> 
+
+          <div class="containerColumn"> <!-- Base Stats -->
+
+            <label>Base Stats</label> <!-- Base Stats title -->
+
+            <div class="containerRow">
+
+              <div class="containerColumn container-margin1">  <!-- Base Stats names -->
+                  <p>HP</p>
+                  <p>Atk</p>
+                  <p>Def</p>
+                  <p>SpAtk</p>
+                  <p>SpDef</p>
+                  <p>Spe</p>
+              </div>
+
+              <div class="containerColumn container-margin1">  <!-- Base Stats numbers -->
+                  <p id="baseStatHP">0</p>
+                  <p id="baseStatAtk">0</p>
+                  <p id="baseStatDef">0</p>
+                  <p id="baseStatSpAtk">0</p>
+                  <p id="baseStatSpDef">0</p>
+                  <p id="baseStatSpe">0</p>
+              </div>
+            
+            </div>
+
+          </div>
+
+          <div class="containerColumn container-margin1"> <!-- IV -->
+            <label class="">IV</label>
+              <div class="containerColumn container-margin1">
+                <input id="inputIV1" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.HP}}" name="createIV1">
+                <input id="inputIV2" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.Atk}}" name="createIV2">
+                <input id="inputIV3" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.Def}}" name="createIV3">
+                <input id="inputIV4" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.SpAtk}}" name="createIV4">
+                <input id="inputIV5" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.SpDef}}" name="createIV5">
+                <input id="inputIV6" class="form-control dropDownMargin1" type="number" min="0" max="31" value="{{edited.ivs.Spe}}" name="createIV6">
+              </div>
+          </div>
+
+          <div class="containerColumn container-margin1"> <!-- EV -->
+            <label class="">EV</label>
+              <div class="containerColumn container-margin1">
+                <input id="inputEV1" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.HP}}" name="createEV1">
+                <input id="inputEV2" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.Atk}}" name="createEV2">
+                <input id="inputEV3" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.Def}}" name="createEV3">
+                <input id="inputEV4" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.SpAtk}}" name="createEV4">
+                <input id="inputEV5" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.SpDef}}" name="createEV5">
+                <input id="inputEV6" class="form-control dropDownMargin1" type="number" min="0" max="255" value="{{edited.evs.Spe}}" name="createEV6">
+              </div>
+          </div>
+
+          <div class="containerColumn container-margin1"> <!-- Damage Graph -->
+            <p>Total</p>
+            <div>
+              <p id="totalHP" class="">0</p>
+              <p id="totalAtk" class="">0</p>
+              <p id="totalDef" class="">0</p>
+              <p id="totalSpAtk" class="">0</p>
+              <p id="totalSpDef" class="">0</p>
+              <p id="totalSpe" class="">0</p>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-outline-info btnSize1">Save</button>
+  
+</form>

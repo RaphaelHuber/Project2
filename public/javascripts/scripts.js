@@ -19,6 +19,7 @@ function loadSpecies() {
       loadNatures();
       loadItems();
       calculateStats();
+      updateMoves();
     });
 }
 
@@ -35,6 +36,7 @@ function loadEdit() {
       loadEditNature();
       loadEditItem();
       calculateStats();
+      updateMoves();
     });
 }
 
@@ -247,6 +249,29 @@ function loadEditNature() {
 
 function statCalc(base, IV, EV, nature) {
   return Math.floor(((((2 * base + IV + (EV / 4))) + 5) * nature));
+}
+
+function updateMoves() {
+  const move1 = document.getElementById('movesSelect1').value;
+  const move2 = document.getElementById('movesSelect2').value;
+  const move3 = document.getElementById('movesSelect3').value;
+  const move4 = document.getElementById('movesSelect4').value;
+
+  document.getElementById('type1Img').src=`/images/types/${moves[move1].type}.png`;
+  document.getElementById('powerMove1').innerText = moves[move1].power;
+  document.getElementById('category1Img').src=`/images/categories/${moves[move1].category}.png`;
+
+  document.getElementById('type2Img').src=`/images/types/${moves[move2].type}.png`;
+  document.getElementById('powerMove2').innerText = moves[move2].power;
+  document.getElementById('category2Img').src=`/images/categories/${moves[move2].category}.png`;
+
+  document.getElementById('type3Img').src=`/images/types/${moves[move3].type}.png`;
+  document.getElementById('powerMove3').innerText = moves[move3].power;
+  document.getElementById('category3Img').src=`/images/categories/${moves[move3].category}.png`;
+
+  document.getElementById('type4Img').src=`/images/types/${moves[move4].type}.png`;
+  document.getElementById('powerMove4').innerText = moves[move4].power;
+  document.getElementById('category4Img').src=`/images/categories/${moves[move4].category}.png`;
 }
 
 function HPCalc(base, IV, EV) {

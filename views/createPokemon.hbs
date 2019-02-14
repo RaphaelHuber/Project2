@@ -1,4 +1,5 @@
 <script src="/javascripts/scripts.js"></script>
+<script src="/javascripts/data.js"></script>
 
 <form action="/createPokemon" method="POST" onchange="calculateStats()">
   <div class="containerColumn flex-wrap containerMargin1"> <!-- Main -->
@@ -47,16 +48,16 @@
 
               <div class="containerColumn containerMargin2">
                 <label>Moves</label>
-                <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="" name="createMove1">
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect1" onchange="updateMoves()" name="createMove1">
                   <option>Move 1</option>
                 </select>
-                <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="" name="createMove2">
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect2" onchange="updateMoves()" name="createMove2">
                   <option>Move 2</option>
                 </select>
-                <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="" name="createMove3">
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect3" onchange="updateMoves()" name="createMove3">
                   <option>Move 3</option>
                 </select>
-                <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="" name="createMove4">
+                <select class="form-control dropDown dropDownMargin1" id="movesSelect4" onchange="updateMoves()" name="createMove4">
                   <option>Move 4</option>
                 </select>
               </div>
@@ -75,24 +76,24 @@
             <div class="containerRow containerMargin2"> <!-- Type and category -->
 
               <div class="containerColumn containerMargin4"> <!-- Type -->
-                <img class="typesMargin1 topMargin1" id="type1Img" src="/images/types/electric.png">
-                <img class="typesMargin1"  id="type2Img" src="/images/types/fire.png">
-                <img class="typesMargin1"  id="type3Img" src="/images/types/ice.png">
-                <img class="typesMargin1"  id="type4Img" src="/images/types/steel.png">
+                <img class="typesMargin1 topMargin1" id="type1Img" src="">
+                <img class="typesMargin1"  id="type2Img" src="">
+                <img class="typesMargin1"  id="type3Img" src="">
+                <img class="typesMargin1"  id="type4Img" src="">
               </div>
 
               <div class="containerColumn containerMargin4"> <!-- Power -->
-                <p class="powerMargin1 topMargin2" id="powerMove1">0</p>
-                <p class="powerMargin1" id="powerMove2">0</p>
-                <p class="powerMargin1" id="powerMove3">0</p>
-                <p class="powerMargin1" id="powerMove4">0</p>
+                <p class="powerMargin1 topMargin2" id="powerMove1"></p>
+                <p class="powerMargin1" id="powerMove2"></p>
+                <p class="powerMargin1" id="powerMove3"></p>
+                <p class="powerMargin1" id="powerMove4"></p>
               </div>
 
               <div class="containerColumn containerMargin4"> <!-- Category -->
-                <img class="categoryMargin1 topMargin1" id="category1Img" src="/images/categories/physical.png">
-                <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
-                <img class="categoryMargin1" id="category1Img" src="/images/categories/special.png">
-                <img class="categoryMargin1" id="category1Img" src="/images/categories/status.png">
+                <img class="categoryMargin1 topMargin1" id="category1Img" src="" alt="">
+                <img class="categoryMargin1" id="category2Img" src="" alt="">
+                <img class="categoryMargin1" id="category3Img" src="" alt="">
+                <img class="categoryMargin1" id="category4Img" src="" alt="">
               </div>
 
             </div>
