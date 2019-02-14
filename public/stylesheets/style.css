@@ -1,3 +1,7 @@
+body {
+  /* background-color: rgba(237,235,139,.9); */
+}
+
 .noBotMargin {
   margin-bottom: 0 !important;
 }
@@ -108,10 +112,6 @@
   margin: 0 auto;
 }
 
-/* .centerText {
-  margin: auto 0;
-} */
-
 .textMargin1 {
   margin: auto auto 35px 0; 
 }
@@ -126,6 +126,10 @@
 
 .titleMargin2 {
   margin: 2vh auto;
+}
+
+.titleMargin3 {
+  margin: 25vh auto;
 }
 
 .pokemonDisplay1 {
@@ -190,10 +194,11 @@
 
 /* Poke cards */
 .cardDesign1 {
+  color: rgba(255,255,255, .9) !important;
   width: 18vw;
   min-width: 220px;
   max-height: 354px;
-  background-color: #F3D91F;
+  background-color: rgba(10,37,101,.9);
   margin: 4vh 0 0 2vw;
 }
 
