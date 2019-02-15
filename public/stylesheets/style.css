@@ -1,5 +1,5 @@
 body {
-  /* background-color: rgba(237,235,139,.9); */
+  background-color: rgba(247, 234, 52, 1);
 }
 
 .noBotMargin {
@@ -27,6 +27,10 @@ body {
 .deleteIcon {
   width: 20px;
   height: 20px;
+}
+
+.backgroundColor1 {
+  background-color: rgb(41, 41, 41) !important;
 }
 
 .imgMargin1 {
