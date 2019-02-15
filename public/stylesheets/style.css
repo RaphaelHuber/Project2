@@ -1,13 +1,17 @@
 body {
-  /* background-color: rgba(237,235,139,.9); */
+  background-color: rgba(123, 199, 194, 1);
 }
 
 .noBotMargin {
   margin-bottom: 0 !important;
 }
 
-.darkBtn {
-  background-color: #7AD88B;
+.btnColor1 {
+  background-color: rgba(229, 158, 113, 1);
+}
+
+.btnColor2 {
+  background-color: rgba(158, 202, 228, 1)!important
 }
 
 .right {
@@ -27,6 +31,10 @@ body {
 .deleteIcon {
   width: 20px;
   height: 20px;
+}
+
+.backgroundColor1 {
+  background-color: rgba(158, 202, 228, 1) !important;
 }
 
 .imgMargin1 {
@@ -198,7 +206,7 @@ body {
   width: 18vw;
   min-width: 220px;
   max-height: 354px;
-  background-color: rgba(10,37,101,.9);
+  background-color: rgba(229, 158, 113, 1);
   margin: 4vh 0 0 2vw;
 }
 

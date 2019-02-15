@@ -52,19 +52,15 @@ router.post('/signup', (req, res, next) => {
 
       newUser.save((err) => {
         if (err) {
-          res.render('signup', { message: 'Registration ran away!', layout: false  });
+          res.render('signup', { message: 'Registration ran away!', layout: false });
         } else {
-          res.redirect('/teams');
+          res.redirect('/createPokemon');
         }
       });
     })
     .catch((error) => {
       next(error);
     });
-});
-
-router.get('/damageAnalysis', (req, res, next) => {
-  res.render('damageAnalysis');
 });
 
 router.get('/teams', ensureLogin.ensureLoggedIn(), (req, res, next) => {
