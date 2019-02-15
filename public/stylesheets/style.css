@@ -1,13 +1,17 @@
 body {
-  background-color: rgba(247, 234, 52, 1);
+  background-color: rgba(123, 199, 194, 1);
 }
 
 .noBotMargin {
   margin-bottom: 0 !important;
 }
 
-.darkBtn {
-  background-color: #7AD88B;
+.btnColor1 {
+  background-color: rgba(229, 158, 113, 1);
+}
+
+.btnColor2 {
+  background-color: rgba(158, 202, 228, 1)!important
 }
 
 .right {
@@ -30,7 +34,7 @@ body {
 }
 
 .backgroundColor1 {
-  background-color: rgb(41, 41, 41) !important;
+  background-color: rgba(158, 202, 228, 1) !important;
 }
 
 .imgMargin1 {
@@ -202,7 +206,7 @@ body {
   width: 18vw;
   min-width: 220px;
   max-height: 354px;
-  background-color: rgba(10,37,101,.9);
+  background-color: rgba(229, 158, 113, 1);
   margin: 4vh 0 0 2vw;
 }
 
