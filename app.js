@@ -3,7 +3,6 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
-// const favicon = require('serve-favicon');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
@@ -17,8 +16,10 @@ const flash = require('connect-flash');
 
 const User = require('./models/User');
 
+console.log('process.env ---', process.env.MONGODB_URI)
+
 mongoose
-  .connect(mongoose.connect(process.env.MONGODB_URI), { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to Mongo');
   })
