@@ -37,7 +37,7 @@ router.post('/signup', (req, res, next) => {
   User.findOne({ username })
     .then((user) => {
       if (user !== null) {
-        res.render('signup', { message: 'This PokéMaster is already registered', layout: false  });
+        res.render('signup', { message: 'This PokéMaster is already registered', layout: false });
         return;
       }
 
