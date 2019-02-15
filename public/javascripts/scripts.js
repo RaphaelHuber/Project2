@@ -9,7 +9,7 @@ let creatorBaseStats = {};
 function loadSpecies() {
   console.log('LOAD SPECIES');
   const selected = document.getElementById('speciesSelect').value;
-  axios.get(`${process.env.API}/loadOneSpecies/${selected}`)
+  axios.get(`https://project2pokemon.herokuapp.com/loadOneSpecies/${selected}`)
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
@@ -27,7 +27,7 @@ function loadSpecies() {
 function loadEdit() {
   console.log('LOAD EDIT');
   const selected = document.getElementById('speciesSelect').value;
-  axios.get(`${process.env.API}/loadOneSpecies/${selected}`)
+  axios.get(`https://project2pokemon.herokuapp.com/loadOneSpecies/${selected}`)
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
@@ -66,7 +66,7 @@ function calculateStats() {
 
   const selectedNature = document.getElementById('natureSelect').value;
 
-  axios.get(`${process.env.API}/loadNature/${selectedNature}`)
+  axios.get(`https://project2pokemon.herokuapp.com/loadNature/${selectedNature}`)
     .then((nature) => {
       const natAtk = nature.data.stats.Atk;
       const natDef = nature.data.stats.Def;
@@ -194,7 +194,7 @@ function loadEditMoves(species) {
 }
 
 function loadItems() {
-  axios.get(`${process.env.API}/loadAllItems`)
+  axios.get('https://project2pokemon.herokuapp.com/loadAllItems')
     .then((items) => {
       const itemPanel = document.getElementById('itemSelect');
       let itemHTML = '';
@@ -206,7 +206,7 @@ function loadItems() {
 }
 
 function loadEditItem() {
-  axios.get(`${process.env.API}/loadAllItems`)
+  axios.get('https://project2pokemon.herokuapp.com/loadAllItems')
     .then((items) => {
       const itemPanel = document.getElementById('itemSelect');
       let itemHTML = '';
@@ -222,7 +222,7 @@ function loadEditItem() {
 }
 
 function loadNatures() {
-  axios.get(`${process.env.API}/loadAllNatures`)
+  axios.get('https://project2pokemon.herokuapp.com/loadAllNatures')
     .then((natures) => {
       const naturesPanel = document.getElementById('natureSelect');
       let natureHTML = '';
@@ -234,7 +234,7 @@ function loadNatures() {
 }
 
 function loadEditNature() {
-  axios.get(`${process.env.API}/loadAllNatures`)
+  axios.get('https://project2pokemon.herokuapp.com/loadAllNatures')
     .then((natures) => {
       const naturesPanel = document.getElementById('natureSelect');
       let natureHTML = '';
@@ -259,21 +259,21 @@ function updateMoves() {
   const move3 = document.getElementById('movesSelect3').value;
   const move4 = document.getElementById('movesSelect4').value;
 
-  document.getElementById('type1Img').src=`/images/types/${moves[move1].type}.png`;
+  document.getElementById('type1Img').src = `/images/types/${moves[move1].type}.png`;
   document.getElementById('powerMove1').innerText = moves[move1].power;
-  document.getElementById('category1Img').src=`/images/categories/${moves[move1].category}.png`;
+  document.getElementById('category1Img').src = `/images/categories/${moves[move1].category}.png`;
 
-  document.getElementById('type2Img').src=`/images/types/${moves[move2].type}.png`;
+  document.getElementById('type2Img').src = `/images/types/${moves[move2].type}.png`;
   document.getElementById('powerMove2').innerText = moves[move2].power;
-  document.getElementById('category2Img').src=`/images/categories/${moves[move2].category}.png`;
+  document.getElementById('category2Img').src = `/images/categories/${moves[move2].category}.png`;
 
-  document.getElementById('type3Img').src=`/images/types/${moves[move3].type}.png`;
+  document.getElementById('type3Img').src = `/images/types/${moves[move3].type}.png`;
   document.getElementById('powerMove3').innerText = moves[move3].power;
-  document.getElementById('category3Img').src=`/images/categories/${moves[move3].category}.png`;
+  document.getElementById('category3Img').src = `/images/categories/${moves[move3].category}.png`;
 
-  document.getElementById('type4Img').src=`/images/types/${moves[move4].type}.png`;
+  document.getElementById('type4Img').src = `/images/types/${moves[move4].type}.png`;
   document.getElementById('powerMove4').innerText = moves[move4].power;
-  document.getElementById('category4Img').src=`/images/categories/${moves[move4].category}.png`;
+  document.getElementById('category4Img').src = `/images/categories/${moves[move4].category}.png`;
 }
 
 function HPCalc(base, IV, EV) {
@@ -282,7 +282,7 @@ function HPCalc(base, IV, EV) {
 
 function addToTeam(pokeID) {
   const teamID = document.getElementById('teamEditID').innerText;
-  axios.patch(`${process.env.API}/addPoke/${teamID}/${pokeID}`);
+  axios.patch(`https://project2pokemon.herokuapp.com/addPoke/${teamID}/${pokeID}`);
 }
 
 function loadFunFacts(species) {
