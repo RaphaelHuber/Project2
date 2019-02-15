@@ -1,6 +1,6 @@
 # Project 2 - Create a Website
 
-As our second project we chose to make a website about the legendary and timeless game Pokemon. We hope that it might help some of these brave Pokémasters still out there fighting the good fight.
+As our second project we chose to make a website about the legendary game Pokémon, in the hope that it might help some of these brave Pokémasters out there catching them alllllll.
 
 ## Getting Started
 
@@ -8,64 +8,48 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You will need a web browser with at least the following versions:
-- Chrome 55
-- Firefox 50
-- Safari 10
-- Opera 42
-- Edge 16
-
-This game has been optimized for a computer with a 15,4-inch (2880 x 1800) resolution. 
-
-The game is not adapted fot the mobile phone yet.
+You will need all the following elements installed:
+- npm
+- Node.js
+- MongoDB
 
 ### Installing
 
-You just want to play already? Just click the following link: https://raphaelhuber.github.io/Ironhack-Project1/Main/index
+You don't want to get bored by the details? Then just click the following link: 
 
 If you prefer having the game content on your computer and play it from there please follow the following steps.
 
-1. Download the zipped Ironhack-Project1-master file
+1. Download the zipped Project2-master file
 2. Unzip the file
 
-### Opening and starting the game
-##### Opening
+### Opening the website
 
-1. Double click on the unzipped Ironhack-Project1-master folder
-2. Double click on the Main folder
-3. Double click the index.html file
-4. You should be seeing a foto of the Harold & Kumar go to white castle movie cover.
+1. Double click on the unzipped Project2-master folder
+2. From your terminal go to the unzipped folder
+3. Run following command: npm install
+4. Then this command: npm start run-dev
+5. Open a web-browser page and write: http://localhost:3000 
 
-##### Sarting the game
+## How to get started
 
-To start the game you just have to click the "Play" button in the center top of the screen. Enjoy!
+Once you are on the login page you can either log in (if you already are a user) or click on the sign up text to fill in the required informations and be able to enjoy the website. Don't worry, you will not receive any emails. Once logged in you will be able to create a new pokemons in the New Pokémon tab on the top left, a new team in the Teams tab and then add the created pokemons to your team. 
 
-## How to play the game
+When creating your pokémon, you can choose the species, the item it holds, it's ability and the distribution of it's IVs and EVs. All these changes will influence accordingly their stats, which will be displayed in the table on the right side. 
+If you wish to edit an already created pokemon in the Pokémon tab you can click on the Edit buttom once you hoover over the pokemon image, or delete it by clicking the small red cross in the bottom right of the pokémon card.
+To create a new team go to the Teams tab, enter a team name and click the Create button. Clicking the add button that appeared you can now add the previously created pokemons to your team. You can then click the Add button (that will appear under the pokemon image once your mouse is over it) once to add that pokemon to your team. You will not be redirected to the teams tab after adding a pokemon so that you may add multiple at the same time and we didn't implement a Add confirmation so remember to click only once, otherwise this pokemon will be added multiple times :).
 
-To best play this game you just need your mouse. In emergencies, you could also use the tab button on your keyboard to select the buttons and then just press enter to confirm. After you clicked the 'Play' button you will find the game-board and a 'Roll the dice' button. Each turn you will roll the dice by clicking this button. It will display you the amount you diced and will automatically move forward accordingly. Once your character stops on a tile it will display the event of the tile and display its content and what will happen once you confirm by clicking the appearing 'Ok' button under the event text (the event images might take a couple of seconds to charge, sorry for that). These events will either make you go further in front, go back or make you stay where you are. Your character will only move once you have clicked this 'Ok' button.
-
-## Goal of the game
-
-The goal of the game is simple. Make it all the way up the tiles and pass OVER the tile 39 to win and get these well deserved and delicious white castle burgers. 
-
-Good luck!
-
-## For the thursty (and over 18) ones
-
-You can easily change this game to any kind of drinking game. E.g. by relating the number of tiles you might have to go back to a number of sips one might have to take or pieces of clothing that need to be removed. I am working on adding a multiplayer mode and respective icons (Harold, Kumar, Goldstein and Rosenberg) but for now you will have to play as one team. 
+Now you can create your own, unique pokemons so that you may build a perfectly balanced team that fits your needs.
 
 ## Technologies used
 
 - HTML 5 for creating the web page
 - CSS 3 for the style of the HTML document
-- JavaScript for all the logic
-- JQuery for all DOM manipulations
-- Canvas for the Game-Board
+- JavaScript for the data processing
 
-## Author
+## Authors
 
-* **Raphael Everest Huber**
+* **Gui Maryssael & Raphael Everest Huber**
 
 ## Acknowledgments
 
-I would like to thank everyone for the amazing help, especially the support from our professor Rodrigo Leme, the two teacher assistances Mateus Felix and Guilherme Davi Gomes de Lima, the Ironhack São Paulo Team and of course my awesome Ironhack WebDev full-time 2019 classmates!!
+We would like to thank everyone for their amazing help, especially the support from our professor Rodrigo Leme, the two teacher assistances Mateus Felix and Guilherme Davi Gomes de Lima, the Ironhack São Paulo Team and of course our awesome Ironhack WebDev full-time 2019 classmates!!
