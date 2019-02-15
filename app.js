@@ -18,16 +18,14 @@ const flash = require('connect-flash');
 const User = require('./models/User');
 
 mongoose
-  .connect('mongodb://localhost/pokemon-team', { useNewUrlParser: true })
+  .connect('mongodb://heroku_ktp1fvjh:4436h5uduibgv53c88tjv1v776@ds125871.mlab.com:25871/heroku_ktp1fvjh', { useNewUrlParser: true })
   .then((x) => {
-    // console.log(`Connect to Mongo! Database name: "${x.connection[0].name}"`);
   })
   .catch((err) => {
     console.error('Error connection to Mongo', err);
   });
 
 const app_name = require('./package.json').name;
-// const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
 app.use(logger('dev'));
