@@ -15,7 +15,7 @@ You will need all the following elements installed:
 
 ### Installing
 
-You don't want to get bored by the details? Then just click the following link: 
+You don't want to get bored by the details? Then just click the following link: https://project2pokemon.herokuapp.com/login
 
 If you prefer having the game content on your computer and play it from there please follow the following steps.
 
