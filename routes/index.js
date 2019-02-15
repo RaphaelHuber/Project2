@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+
 const router = express.Router();
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -27,7 +28,11 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { username, password, email } = req.body;
+  const username = req.body.newUsername;
+  const password = req.body.newPassword;
+  const email = req.body.newEmail;
+
+  console.log('BBB', username, password, email);
 
   if (username === '' || password === '' || email === '') {
     res.render('signup', { message: 'Please fill in all fields', layout: false });
@@ -54,12 +59,12 @@ router.post('/signup', (req, res, next) => {
         if (err) {
           res.render('signup', { message: 'Registration ran away!', layout: false });
         } else {
-          res.redirect('/createPokemon');
+          res.redirect('/teams');
         }
-      });
-    })
-    .catch((error) => {
-      next(error);
+      })
+        .catch((error) => {
+          next(error);
+        });
     });
 });
 
@@ -260,7 +265,7 @@ router.get('/loadTeam/:id', (req, res) => {
 router.patch('/addPoke/:teamID/:pokeID', (req, res) => {
   Team.updateOne({ _id: req.params.teamID }, { $push: { pokemon: req.params.pokeID } })
     .then(() => {
-      res.redirect('/teams');
+      res.render('teams');
     })
     .catch((err) => {
       console.log('Error', err);

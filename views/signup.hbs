@@ -41,16 +41,16 @@
 
           <form class="sign-up-htm" action="/signup" method="POST"> <!-- Sign up form -->
             <div class="group">
-              <label for="username" class="label">Username</label>
-              <input type="text" class="input" placeholder="Lance" name="username">
+              <label for="newUsername" class="label">Username</label>
+              <input type="text" class="input" placeholder="Lance" name="newUsername">
             </div>
             <div class="group">
-              <label for="password" class="label">Password</label>
-              <input type="password" class="input" placeholder="YourFavoritePokemon" name="password">
+              <label for="newPassword" class="label">Password</label>
+              <input type="password" class="input" placeholder="YourFavoritePokemon" name="newPassword">
             </div>
             <div class="group">
-              <label for="email" class="label loginText1">Email Address</label>
-              <input type="email"  name="email" class="input loginText1" placeholder="dragonTamer@indigoplateau.com" name="email">
+              <label for="newEmail" class="label">Email Address</label>
+              <input type="email"  name="newEmail" class="input" placeholder="dragonTamer@indigoplateau.com" name="email">
             </div>
 
             {{#if message}}
