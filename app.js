@@ -18,8 +18,9 @@ const flash = require('connect-flash');
 const User = require('./models/User');
 
 mongoose
-  .connect('mongodb://heroku_ktp1fvjh:4436h5uduibgv53c88tjv1v776@ds125871.mlab.com:25871/heroku_ktp1fvjh', { useNewUrlParser: true })
-  .then((x) => {
+  .connect(mongoose.connect(process.env.MONGODB_URI), { useNewUrlParser: true })
+  .then(() => {
+    console.log('Connected to Mongo');
   })
   .catch((err) => {
     console.error('Error connection to Mongo', err);

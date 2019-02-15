@@ -9,7 +9,7 @@ let creatorBaseStats = {};
 function loadSpecies() {
   console.log('LOAD SPECIES');
   const selected = document.getElementById('speciesSelect').value;
-  axios.get(`http://localhost:3000/loadOneSpecies/${selected}`)
+  axios.get(`${process.env.API}/loadOneSpecies/${selected}`)
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
@@ -27,7 +27,7 @@ function loadSpecies() {
 function loadEdit() {
   console.log('LOAD EDIT');
   const selected = document.getElementById('speciesSelect').value;
-  axios.get(`http://localhost:3000/loadOneSpecies/${selected}`)
+  axios.get(`${process.env.API}/loadOneSpecies/${selected}`)
     .then((species) => {
       feedSpecies(species);
       loadSprite(species);
@@ -66,7 +66,7 @@ function calculateStats() {
 
   const selectedNature = document.getElementById('natureSelect').value;
 
-  axios.get(`http://localhost:3000/loadNature/${selectedNature}`)
+  axios.get(`${process.env.API}/loadNature/${selectedNature}`)
     .then((nature) => {
       const natAtk = nature.data.stats.Atk;
       const natDef = nature.data.stats.Def;
@@ -194,7 +194,7 @@ function loadEditMoves(species) {
 }
 
 function loadItems() {
-  axios.get('http://localhost:3000/loadAllItems')
+  axios.get(`${process.env.API}/loadAllItems`)
     .then((items) => {
       const itemPanel = document.getElementById('itemSelect');
       let itemHTML = '';
@@ -206,7 +206,7 @@ function loadItems() {
 }
 
 function loadEditItem() {
-  axios.get('http://localhost:3000/loadAllItems')
+  axios.get(`${process.env.API}/loadAllItems`)
     .then((items) => {
       const itemPanel = document.getElementById('itemSelect');
       let itemHTML = '';
@@ -222,7 +222,7 @@ function loadEditItem() {
 }
 
 function loadNatures() {
-  axios.get('http://localhost:3000/loadAllNatures')
+  axios.get(`${process.env.API}/loadAllNatures`)
     .then((natures) => {
       const naturesPanel = document.getElementById('natureSelect');
       let natureHTML = '';
@@ -234,7 +234,7 @@ function loadNatures() {
 }
 
 function loadEditNature() {
-  axios.get('http://localhost:3000/loadAllNatures')
+  axios.get(`${process.env.API}/loadAllNatures`)
     .then((natures) => {
       const naturesPanel = document.getElementById('natureSelect');
       let natureHTML = '';
@@ -282,7 +282,7 @@ function HPCalc(base, IV, EV) {
 
 function addToTeam(pokeID) {
   const teamID = document.getElementById('teamEditID').innerText;
-  axios.patch(`http://localhost:3000/addPoke/${teamID}/${pokeID}`);
+  axios.patch(`${process.env.API}/addPoke/${teamID}/${pokeID}`);
 }
 
 function loadFunFacts(species) {
